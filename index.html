@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện đề Ngữ văn ĐGNL - Đề số 5</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%93%96%3C/text%3E%3C/svg%3E">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        // Giấy kem (thay slate): 50-600 là màu chữ (mực nâu), 700-950 là nền / viền sáng
+                        slate: {50:'#180f0e',100:'#2f1d17',200:'#3f2a22',300:'#5a4338',400:'#7a6256',500:'#86705f',600:'#a8937f',700:'#e0cfb5',800:'#efe2cf',900:'#ffffff',950:'#fbf6ee'},
+                        // Đỏ gạch / garnet (thay indigo) - màu chủ đạo
+                        indigo: {50:'#fdf1ed',100:'#fbe0d7',200:'#8a2616',300:'#8a2616',400:'#a8321f',500:'#c8452f',600:'#a8321f',700:'#8a2616',800:'#6b1d12',900:'#4a140d',950:'#fdf1ed'},
+                        purple: {300:'#e3a3a9',400:'#c96b78',500:'#a8384c',600:'#8c2a3c',700:'#6e1f2f',800:'#511723'},
+                        // Vàng đồng (thay pink) - điểm nhấn, đậm hơn để đọc được trên nền sáng
+                        pink: {300:'#9a6412',400:'#b8801f',500:'#c98a2b',600:'#a56d1d'},
+                        emerald: {200:'#0a6b49',400:'#0b7a55',500:'#10b981',600:'#059669',950:'#e7f8ef'},
+                        rose: {200:'#9f1d33',400:'#cc2a45',500:'#f43f5e',600:'#e11d48',950:'#fdecee'},
+                        amber: {300:'#a56d1d',400:'#b7791f'},
+                        teal: {400:'#0f8a80'},
+                    },
+                    fontFamily: {
+                        sans: ['"Be Vietnam Pro"', 'system-ui', 'sans-serif'],
+                        display: ['"Playfair Display"', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- KaTeX CDN for mathematical formulas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Canvas Confetti CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #180f0e; }
+        ::-webkit-scrollbar-thumb { background: #5a4338; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8321f; }
+
+        body {
+            background-color: #180f0e;
+            background-image:
+                radial-gradient(900px 500px at 8% -10%, rgba(168, 50, 31, 0.20), transparent 60%),
+                radial-gradient(800px 500px at 100% 0%, rgba(201, 138, 43, 0.10), transparent 55%),
+                radial-gradient(700px 600px at 50% 110%, rgba(110, 31, 47, 0.18), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1, h2, h3, .font-display { font-family: 'Playfair Display', Georgia, serif; }
+        h2 { letter-spacing: 0.02em; }
+
+        /* Header: viền vàng đồng mảnh bên dưới */
+        header.sticky { position: sticky; background: linear-gradient(180deg, rgba(39,27,26,.96), rgba(24,15,14,.92)) !important; border-bottom: 1px solid rgba(201,138,43,.28) !important; }
+        header.sticky::after { content:''; position:absolute; left:0; right:0; bottom:-1px; height:1px; background: linear-gradient(90deg, transparent, #c98a2b, transparent); opacity:.7; }
+
+        .glass-card {
+            background: linear-gradient(160deg, rgba(56, 41, 42, 0.82), rgba(39, 27, 26, 0.82));
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 169, 77, 0.12);
+            box-shadow: 0 10px 30px -12px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,235,210,.05);
+        }
+        #questionsContainer > .glass-card { position: relative; border-left: 3px solid #a8321f; }
+        #questionsContainer > .glass-card:hover { border-color: rgba(226,169,77,.35); border-left-color: #e2a94d; transform: translateY(-1px); }
+
+        .hero-banner {
+            background:
+                linear-gradient(135deg, rgba(138,38,22,.92) 0%, rgba(110,31,47,.92) 55%, rgba(74,20,13,.95) 100%);
+            border: 1px solid rgba(226,169,77,.35);
+            position: relative; overflow: hidden;
+        }
+        .hero-banner::before {
+            content:''; position:absolute; inset:0;
+            background: repeating-linear-gradient(45deg, rgba(255,235,210,.035) 0 2px, transparent 2px 14px);
+            pointer-events:none;
+        }
+        .hero-banner::after {
+            content:''; position:absolute; right:-60px; top:-60px; width:220px; height:220px; border-radius:50%;
+            background: radial-gradient(circle, rgba(226,169,77,.35), transparent 70%); pointer-events:none;
+        }
+        .hero-chip { background: rgba(24,15,14,.45); border: 1px solid rgba(240,205,138,.25); }
+
+        .math-content .katex { font-size: 1.05em; }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 12px rgba(200, 69, 47, 0.25); }
+            50% { box-shadow: 0 0 24px rgba(226, 169, 77, 0.45); }
+        }
+        .active-timer { animation: pulseGlow 2.4s infinite; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+        .animate-fadeIn { animation: fadeIn .45s ease both; }
+
+        select, input { color-scheme: light; }
+        button { cursor: pointer; }
+        .ic { width: 1em; height: 1em; display: inline-block; vertical-align: -0.125em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+        .math-content .katex { font-size: 1.1em; }
+        .math-content strong { color: #f0cd8a; font-weight: 700; }
+        @media (min-width: 1024px) {
+            aside.lg\:col-span-4 { position: sticky; top: 5.25rem; align-self: start; max-height: calc(100vh - 6.5rem); overflow-y: auto; padding-right: 4px; }
+        }
+        #questionsContainer > .glass-card { padding-top: 1.5rem; }
+        .opt-btn { min-height: 64px; }
+        .flag-btn { display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .75rem; font-size:11px; font-weight:700; border-radius:.75rem; border:1px solid rgba(226,169,77,.35); color:#e2a94d; background:rgba(201,138,43,.08); transition:all .15s; }
+        .flag-btn:hover { background:rgba(201,138,43,.2); }
+        .flag-btn.on { background:linear-gradient(90deg,#c98a2b,#a8321f); color:#fff; border-color:rgba(240,205,138,.6); box-shadow:0 4px 14px -6px rgba(201,138,43,.7); }
+        .m-flag { position:relative; }
+        .m-flag::after { content:''; position:absolute; top:-3px; right:-3px; width:9px; height:9px; border-radius:50%; background:#e2a94d; border:2px solid #271b1a; }
+        #questionsContainer > .glass-card.is-flagged { border-left-color:#e2a94d; background:linear-gradient(160deg, rgba(201,138,43,.12), rgba(39,27,26,.85)); }
+        .music-btn.playing { border-color: rgba(226,169,77,.8); box-shadow: 0 0 16px -2px rgba(226,169,77,.55); }
+        .eq { display: none; align-items: flex-end; gap: 2px; height: 14px; }
+        .music-btn.playing .eq { display: inline-flex; }
+        .eq i { display: block; width: 3px; height: 30%; background: currentColor; border-radius: 2px; animation: eqbar .9s ease-in-out infinite; }
+        .eq i:nth-child(2) { animation-delay: .2s; }
+        .eq i:nth-child(3) { animation-delay: .4s; }
+        @keyframes eqbar { 0%, 100% { height: 25%; } 50% { height: 100%; } }
+        .mode-btn { padding: .45rem .25rem; font-size: 11px; font-weight: 700; line-height: 1.25; text-align: center; border-radius: .75rem; border: 1px solid #4e3c33; background: rgba(24,15,14,.55); color: #d3c0ae; transition: all .15s; }
+        .mode-btn span { font-weight: 500; font-size: 10px; opacity: .8; }
+        .mode-btn:hover { border-color: rgba(226,169,77,.5); }
+        .mode-btn.active { background: linear-gradient(135deg, #a8321f, #8a2616); color: #fff; border-color: rgba(240,205,138,.6); }
+        .short-input { width: 100%; max-width: 28rem; padding: .85rem 1rem; font-size: 1.15rem; font-weight: 700; letter-spacing: .02em; color: #fbe4dc; background: rgba(24,15,14,.7); border: 1.5px solid #6b5648; border-radius: 1rem; outline: none; transition: all .15s; }
+        .short-input::placeholder { color: #8c7766; font-weight: 500; font-size: .95rem; letter-spacing: 0; }
+        .short-input:focus { border-color: #e2a94d; box-shadow: 0 0 0 3px rgba(226,169,77,.25); }
+        .short-input.ok { border-color: #10b981; color: #a7f3d0; background: rgba(2,44,34,.6); }
+        .short-input.bad { border-color: #f43f5e; color: #fecdd3; background: rgba(76,5,25,.5); }
+        .start-card { background: linear-gradient(160deg, rgba(110,31,47,.6), rgba(39,27,26,.94) 55%, rgba(24,15,14,.97)); box-shadow: inset 0 0 0 1px rgba(226,169,77,.22); }
+        .start-card::before { content:''; position:absolute; inset:0; background: repeating-linear-gradient(45deg, rgba(255,235,210,.03) 0 2px, transparent 2px 14px); pointer-events:none; }
+        .start-card::after { content:''; position:absolute; right:-160px; top:-160px; width:520px; height:520px; border-radius:50%; background: radial-gradient(circle, rgba(226,169,77,.26), transparent 70%); pointer-events:none; }
+        .start-stat { background: rgba(24,15,14,.6); border: 1px solid rgba(240,205,138,.25); border-radius: 1.25rem; padding: 1.1rem .75rem; backdrop-filter: blur(4px); }
+        .start-btn { background: linear-gradient(90deg, #c98a2b, #a8321f 60%, #8a2616); color: #fff; font-weight: 800; letter-spacing: .06em; border: 1px solid rgba(240,205,138,.55); border-radius: 1.25rem; padding: 1.15rem 3.5rem; box-shadow: 0 12px 30px -10px rgba(201,138,43,.75); transition: transform .15s, filter .15s; animation: startGlow 2.4s infinite; }
+        .start-btn:hover { transform: translateY(-2px) scale(1.02); filter: brightness(1.1); }
+        .start-btn:active { transform: scale(.98); }
+        @keyframes startGlow { 0%,100% { box-shadow: 0 12px 30px -10px rgba(201,138,43,.6); } 50% { box-shadow: 0 12px 44px -6px rgba(226,169,77,.95); } }
+
+        .hero-icon { box-shadow: 0 0 0 8px rgba(240,205,138,.08), 0 0 0 18px rgba(240,205,138,.04), 0 20px 50px -10px rgba(200,69,47,.7); }
+        .hero-eyebrow { display:flex; align-items:center; justify-content:center; gap:1rem; }
+        .hero-eyebrow em { font-style:normal; font-weight:600; font-size:.75rem; letter-spacing:.3em; text-transform:uppercase; color:#f0cd8a; white-space:nowrap; }
+        .hero-eyebrow span { height:1px; width:clamp(1.5rem,8vw,5rem); background:linear-gradient(90deg, transparent, rgba(240,205,138,.7)); }
+        .hero-eyebrow span:last-child { transform:scaleX(-1); }
+        @media (min-width:640px){ .hero-eyebrow em { font-size:.875rem; } }
+        @media (max-width:639px){ .hero-eyebrow em { white-space:normal; letter-spacing:.2em; } }
+        .start-title { text-wrap: balance; }
+        .hero-orn { display:flex; justify-content:center; }
+        .hero-orn i { display:block; width:min(14rem,50%); height:1px; background:linear-gradient(90deg, transparent, rgba(240,205,138,.8), transparent); position:relative; }
+        .hero-orn i::after { content:''; position:absolute; left:50%; top:50%; width:8px; height:8px; background:#f0cd8a; transform:translate(-50%,-50%) rotate(45deg); box-shadow:0 0 12px rgba(240,205,138,.8); }
+        .hero-feat { display:flex; align-items:center; gap:.9rem; text-align:left; padding:1rem 1.1rem; border-radius:1.25rem; background:rgba(24,15,14,.55); border:1px solid rgba(240,205,138,.22); backdrop-filter:blur(4px); transition:transform .2s, border-color .2s; }
+        .hero-feat:hover { transform:translateY(-3px); border-color:rgba(240,205,138,.5); }
+        .hero-feat-ic { flex:none; width:2.75rem; height:2.75rem; border-radius:.9rem; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, rgba(200,69,47,.35), rgba(201,138,43,.25)); border:1px solid rgba(240,205,138,.3); }
+        .hero-feat p { font-size:.95rem; line-height:1.45; color:#e8dccf; }
+        .hero-feat b { color:#f0cd8a; }
+
+        .passage-box { background: rgba(24,15,14,.55); border: 1px solid rgba(240,205,138,.25); border-left: 3px solid #e2a94d; border-radius: .9rem; padding: .9rem 1.1rem; margin: .25rem 0 .75rem; font-size: .95rem; line-height: 1.75; color: #e8dccf; font-style: italic; }
+        .passage-box p { margin: 0 0 .55rem; }
+        .passage-box p:last-child { margin-bottom: 0; }
+        .passage-box .pcite { text-align: right; font-size: .85rem; color: #b9a690; font-style: normal; }
+        .passage-label { font-style: normal; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #f0cd8a; margin-bottom: .45rem; }
+        .passage-fold summary { cursor: pointer; font-style: normal; font-size: .8rem; font-weight: 600; color: #f0cd8a; }
+        .passage-fold[open] summary { margin-bottom: .6rem; }
+
+        /* ===== GIAO DIỆN SÁNG: giấy kem, mực nâu, điểm nhấn đỏ garnet và vàng đồng ===== */
+        ::-webkit-scrollbar-track { background: #f3e9dc; }
+        ::-webkit-scrollbar-thumb { background: #d7c3aa; }
+        body {
+            background-color: #fbf6ee;
+            background-image:
+                radial-gradient(900px 500px at 8% -10%, rgba(168,50,31,.08), transparent 60%),
+                radial-gradient(800px 500px at 100% 0%, rgba(201,138,43,.16), transparent 55%),
+                radial-gradient(700px 600px at 50% 110%, rgba(168,50,31,.07), transparent 60%);
+        }
+        header.sticky { background: rgba(255,252,247,.94) !important; border-bottom: 1px solid rgba(201,138,43,.4) !important; box-shadow: 0 10px 26px -20px rgba(90,50,30,.55) !important; }
+        .glass-card { background: #fff; backdrop-filter: none; border: 1px solid #eadcc8; box-shadow: 0 16px 36px -24px rgba(110,60,30,.4), 0 2px 6px -2px rgba(110,60,30,.08); }
+        #questionsContainer > .glass-card:hover { border-color: rgba(201,138,43,.55); box-shadow: 0 20px 40px -22px rgba(110,60,30,.45); }
+        #questionsContainer > .glass-card.is-flagged { background: linear-gradient(160deg, #fff4dc, #fff); }
+        .m-flag::after { border-color: #fff; }
+        .bg-slate-950\/80 { background-color: rgba(58,36,28,.45) !important; }
+
+        .hero-banner { box-shadow: 0 22px 44px -26px rgba(138,38,22,.7); }
+        .hero-banner .text-pink-300, .hero-banner .text-pink-400 { color: #f0cd8a; }
+        .hero-banner [class*="text-slate-"] { color: #f8ecdc; }
+        .hero-chip { background: rgba(255,255,255,.12); border-color: rgba(240,205,138,.45); }
+
+        .math-content strong { color: #8a2616; }
+        .flag-btn { color: #96601a; background: #fff6e2; border-color: rgba(201,138,43,.5); }
+        .flag-btn:hover { background: #ffecc4; }
+        .mode-btn { border-color: #e4d3bb; background: #fff; color: #5a4338; }
+        .short-input { color: #2f1d17; background: #fff; border-color: #d9c4a6; }
+        .short-input::placeholder { color: #a8937f; }
+
+        .passage-box { background: #fff8ec; border-color: #ecd9b8; border-left-color: #c98a2b; color: #4a362d; box-shadow: 0 8px 20px -16px rgba(110,60,30,.4); }
+        .passage-label, .passage-fold summary { color: #8a2616; }
+        .passage-box .pcite { color: #86705f; }
+
+        /* Màn hình mở đầu */
+        .start-card { background: linear-gradient(160deg, #fffaf2 0%, #faeedb 55%, #f4e0c3 100%); box-shadow: inset 0 0 0 1px rgba(201,138,43,.35); }
+        .start-card::before { background: repeating-linear-gradient(45deg, rgba(120,70,30,.035) 0 2px, transparent 2px 14px); }
+        .start-card::after { background: radial-gradient(circle, rgba(201,138,43,.30), transparent 70%); }
+        .start-title .text-pink-300 { color: #a8321f; }
+        .hero-icon { box-shadow: 0 0 0 8px rgba(201,138,43,.14), 0 0 0 18px rgba(201,138,43,.07), 0 22px 44px -12px rgba(168,50,31,.55); }
+        .hero-eyebrow em { color: #8a5a12; }
+        .hero-eyebrow span { background: linear-gradient(90deg, transparent, rgba(165,109,29,.8)); }
+        .hero-orn i { background: linear-gradient(90deg, transparent, rgba(165,109,29,.85), transparent); }
+        .hero-orn i::after { background: #c98a2b; box-shadow: 0 0 10px rgba(201,138,43,.6); }
+        .hero-feat { background: #fff; border-color: #ecd9b8; box-shadow: 0 12px 26px -18px rgba(110,60,30,.5); backdrop-filter: none; }
+        .hero-feat:hover { border-color: rgba(201,138,43,.7); }
+        .hero-feat p { color: #4a362d; }
+        .hero-feat b { color: #a8321f; }
+        .hero-feat-ic { background: linear-gradient(135deg, #fdeae3, #fdf0d8); border-color: #f0d3b4; }
+
+        /* Thẻ trích dẫn */
+        .quote-card { position: relative; overflow: hidden; padding: 1.5rem 1.4rem 1.1rem; border-radius: 1.4rem; background: linear-gradient(160deg, #fffaf0 0%, #fff1d9 100%); border: 1px solid #ecd3a4; box-shadow: 0 18px 38px -24px rgba(138,38,22,.45); }
+        .quote-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:5px; background: linear-gradient(180deg, #c98a2b, #a8321f); }
+        .quote-card::after { content:''; position:absolute; right:-40px; bottom:-40px; width:150px; height:150px; border-radius:50%; background: radial-gradient(circle, rgba(201,138,43,.22), transparent 70%); pointer-events:none; }
+        .quote-mark { position:absolute; right:1rem; top:-.35rem; font-family:'Playfair Display', Georgia, serif; font-size:6rem; line-height:1; color:rgba(168,50,31,.13); pointer-events:none; }
+        .quote-label { font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#a56d1d; margin-bottom:.6rem; }
+        .quote-text { font-family:'Playfair Display', Georgia, serif; font-style:italic; font-weight:600; font-size:1.2rem; line-height:1.55; color:#3a1d16; position:relative; z-index:1; }
+        .quote-foot { display:flex; align-items:center; gap:.6rem; margin-top:.95rem; }
+        .quote-line { width:1.6rem; height:2px; border-radius:2px; background:#c98a2b; }
+        .quote-author { font-size:.8rem; font-weight:700; color:#8a2616; flex:1; }
+        .quote-next { width:2rem; height:2rem; border-radius:.7rem; display:inline-flex; align-items:center; justify-content:center; color:#a8321f; background:rgba(255,255,255,.75); border:1px solid #ecd3a4; transition: transform .25s, background .15s; }
+        .quote-next:hover { background:#fff; transform: rotate(180deg); }
+        .quote-card.swap .quote-text, .quote-card.swap .quote-author { animation: fadeIn .5s ease both; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col antialiased selection:bg-indigo-600 selection:text-white">
+    <!-- Màn hình chính: sẵn sàng làm bài (phủ toàn màn hình) -->
+    <div id="startScreen" class="fixed inset-0 z-[60] overflow-y-auto bg-slate-950 animate-fadeIn">
+        <div class="start-card relative w-full min-h-full flex flex-col items-center justify-center px-5 sm:px-12 py-10 text-center">
+            <div class="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center gap-7 sm:gap-10">
+                <div class="hero-icon w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-tr from-indigo-700 via-indigo-500 to-pink-500 flex items-center justify-center shadow-2xl shadow-indigo-900/60 ring-1 ring-pink-300/50">
+                    <svg class="ic text-4xl sm:text-5xl text-white" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <div class="space-y-4 sm:space-y-6">
+                    <div class="hero-eyebrow"><span></span><em>Phòng luyện Ngữ văn</em><span></span></div>
+                    <h1 class="start-title font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-100 leading-[1.1]"><span class="block">Luyện đề Ngữ văn</span><span class="block text-pink-300">Đánh giá năng lực</span></h1>
+                    <div class="hero-orn"><i></i></div>
+                    <p class="text-base sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">Đọc hiểu · Ngôn ngữ · Văn học · đáp án và lời giải sau khi nộp bài</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-5 w-full max-w-5xl mx-auto"><div class="hero-feat"><div class="hero-feat-ic"><svg class="ic text-pink-300 text-xl" viewBox="0 0 24 24" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg></div><p>Đồng hồ <b class="text-pink-300">chỉ bắt đầu chạy</b> khi bạn bấm nút Bắt đầu bên dưới.</p></div><div class="hero-feat"><div class="hero-feat-ic"><svg class="ic text-pink-300 text-xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg></div><p>Có thể <b class="text-pink-300">đánh dấu</b> câu chưa làm được để quay lại sau.</p></div><div class="hero-feat"><div class="hero-feat-ic"><svg class="ic text-pink-300 text-xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div><p>Đáp án và lời giải chi tiết hiện sau khi bạn nộp bài.</p></div></div>
+
+                <button onclick="beginTest()" class="start-btn inline-flex items-center justify-center gap-3 text-lg sm:text-2xl">
+                    <svg class="ic text-2xl" viewBox="0 0 24 24" aria-hidden="true" style="fill:currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                    <span>BẮT ĐẦU LÀM BÀI</span>
+                </button>
+            </div>
+
+            <div class="relative z-10 mt-10 flex items-center justify-center gap-1.5 text-slate-400 text-xs sm:text-sm">
+                <svg class="ic text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M14.83 14.83a4 4 0 1 1 0-5.66"/></svg>
+                <span>2026 Bản quyền thuộc về <strong class="font-display text-pink-300 tracking-wide">ManhDucPham</strong></span>
+            </div>
+        </div>
+    </div>
+
+    
+    <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- App Brand Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-700 via-indigo-500 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-900/50 ring-1 ring-pink-300/40">
+                    <svg class="ic text-lg text-white" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <span class="font-display font-extrabold text-base sm:text-xl tracking-tight bg-gradient-to-r from-pink-300 via-indigo-200 to-pink-400 bg-clip-text text-transparent">
+                            Ngữ văn ĐGNL - Đề số 5
+                        </span>
+                        <span class="px-2 py-0.5 text-[10px] sm:text-xs font-semibold bg-pink-500/15 text-pink-300 rounded-full border border-pink-400/30">Ôn Tập</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 font-medium hidden sm:block">Phòng luyện Ngữ văn ĐGNL (50 câu)</p>
+                </div>
+            </div>
+
+            <!-- Header Action Controls -->
+            <div class="flex items-center space-x-3">
+                <!-- Nhạc tập trung -->
+                <div id="musicWrap" class="relative">
+                    <button id="musicBtn" onclick="toggleMusicPanel()" title="Nhạc tập trung" class="music-btn px-3 py-2 bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold rounded-xl border border-pink-400/30 transition duration-200 flex items-center space-x-2">
+                        <svg class="ic text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                        <span class="eq text-pink-300"><i></i><i></i><i></i></span>
+                        <span class="hidden md:inline">Nhạc</span>
+                    </button>
+                    <div id="musicPanel" class="hidden absolute right-0 top-full mt-3 w-72 glass-card rounded-2xl p-4 space-y-3 z-50 shadow-2xl">
+                        <div class="flex items-center justify-between">
+                            <div class="font-display font-bold text-slate-100 text-sm">Nhạc tập trung</div>
+                            <span id="musicStatus" class="text-[11px] font-semibold text-pink-300">Đang tắt</span>
+                        </div>
+                        <button onclick="toggleMusic()" class="w-full py-2.5 bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-400 hover:to-indigo-500 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-900/40 ring-1 ring-pink-300/30 transition">
+                            <span id="musicToggleLabel">Bật nhạc</span>
+                        </button>
+                        <div>
+                            <div class="text-[11px] text-slate-400 mb-1.5">Nhịp sóng não (binaural)</div>
+                            <div class="grid grid-cols-3 gap-1.5">
+                                <button id="mode-alpha" onclick="setMusicMode('alpha')" class="mode-btn">Alpha<br><span>10 Hz</span></button>
+                                <button id="mode-beta" onclick="setMusicMode('beta')" class="mode-btn">Beta<br><span>18 Hz</span></button>
+                                <button id="mode-gamma" onclick="setMusicMode('gamma')" class="mode-btn">Gamma<br><span>40 Hz</span></button>
+                            </div>
+                            <div id="modeDesc" class="text-[11px] text-pink-300/90 mt-1.5">Tỉnh táo, tập trung giải bài</div>
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-slate-400 mb-1">Âm lượng</div>
+                            <input type="range" min="0" max="100" value="70" oninput="setMusicVolume(this.value)" class="w-full accent-pink-500">
+                        </div>
+                        <p class="text-[10.5px] leading-relaxed text-slate-400">Âm thanh được tạo trực tiếp trên trình duyệt. Nên đeo tai nghe stereo để nghe được nhịp binaural và giữ âm lượng nhỏ. Hiệu quả của binaural còn tùy người, nhưng nhạc nền êm giúp nhiều bạn dễ tập trung hơn.</p>
+                    </div>
+                </div>
+
+                <!-- Exam Timer Display -->
+                <div id="examTimerBox" class="flex items-center space-x-2 bg-slate-800/90 px-3 py-1.5 rounded-xl border border-indigo-500/30 text-indigo-300 font-mono text-xs sm:text-sm font-bold active-timer">
+                    <svg class="ic text-indigo-400" viewBox="0 0 24 24" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>
+                    <span id="timerDisplay">25:00</span>
+                </div>
+
+                <!-- Submit Exam Button -->
+                <button id="submitExamBtn" onclick="submitExam()" class="px-4 py-2 bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-400 hover:to-indigo-500 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-indigo-900/40 ring-1 ring-pink-300/30 transition duration-200 flex items-center space-x-2">
+                    <svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                    <span>NỘP BÀI</span>
+                </button>
+
+                <!-- Sau khi nộp: thay đồng hồ + nút nộp bài bằng nút xem kết quả -->
+                <button id="viewResultBtn" onclick="openResultModal()" class="hidden px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-emerald-900/40 ring-1 ring-emerald-300/30 transition duration-200 flex items-center space-x-2">
+                    <svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-1.21 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98 1.21 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                    <span>Điểm: <span id="headerScore">0.0</span>/10 · Xem kết quả</span>
+                </button>
+
+                <button id="restartBtn" onclick="restartTest()" class="hidden px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-100 text-xs sm:text-sm font-bold rounded-xl border border-pink-400/40 transition duration-200 flex items-center space-x-2">
+                    <svg class="ic text-pink-300 " viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+                    <span class="hidden sm:inline">Làm lại</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- Left Sidebar (Matrix & Filters) -->
+        <aside class="lg:col-span-4 space-y-6">
+            
+            <!-- Thẻ trích dẫn -->
+        <div id="quoteCard" class="quote-card">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <div class="quote-label">Gửi người đang ôn thi</div>
+            <p id="quoteText" class="quote-text"></p>
+            <div class="quote-foot">
+                <span class="quote-line" aria-hidden="true"></span>
+                <span id="quoteAuthor" class="quote-author"></span>
+                <button type="button" onclick="nextQuote()" class="quote-next" title="Xem câu khác" aria-label="Xem câu khác">
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Question Matrix Container -->
+            <div class="glass-card p-5 rounded-2xl space-y-4">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center space-x-2">
+                        <svg class="ic text-indigo-400" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                        <span>Ma Trận Câu Hỏi</span>
+                    </h2>
+                    <span id="progressText" class="text-xs font-bold px-2.5 py-1 bg-indigo-500/10 text-indigo-400 rounded-lg border border-indigo-500/20">
+                        0 / 50 Đã làm
+                    </span>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                    <div id="progressBar" class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+
+                <!-- Matrix Button Grid -->
+                <div id="questionMatrix" class="grid grid-cols-5 sm:grid-cols-6 gap-2 max-h-[260px] overflow-y-auto pr-1">
+                    <!-- Matrix buttons populated dynamically -->
+                </div>
+
+                <!-- Flag summary -->
+                <div id="flagRow" class="flex items-center justify-between gap-2 rounded-xl px-3 py-2 bg-pink-500/10 border border-pink-400/25">
+                    <div class="flex items-center space-x-2 text-xs text-pink-300 font-semibold">
+                        <svg class="ic text-pink-400" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+                        <span>Chưa làm được: <strong id="flagCount" class="text-slate-100">0</strong> câu</span>
+                    </div>
+                    <button id="flagJumpBtn" onclick="jumpToNextFlag()" class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-pink-500/20 text-pink-300 hover:bg-pink-500/30 transition">Tới câu kế tiếp</button>
+                </div>
+
+                <!-- Legend Indicator -->
+                <div class="pt-3 border-t border-slate-800 flex flex-wrap gap-x-4 gap-y-2 text-[11px] text-slate-400">
+                    <div class="flex items-center space-x-1.5">
+                        <span class="w-3 h-3 rounded-md bg-slate-800 border border-slate-700"></span>
+                        <span>Chưa làm</span>
+                    </div>
+                    <div id="legendFlag" class="flex items-center space-x-1.5">
+                        <span class="w-3 h-3 rounded-md bg-pink-500/30 border border-pink-400"></span>
+                        <span>Đánh dấu</span>
+                    </div>
+                    <div id="legendSelected" class="flex items-center space-x-1.5">
+                        <span class="w-3 h-3 rounded-md bg-indigo-600"></span>
+                        <span>Đã làm</span>
+                    </div>
+                    <div id="legendCorrect" class="hidden flex items-center space-x-1.5">
+                        <span class="w-3 h-3 rounded-md bg-emerald-600"></span>
+                        <span>Đúng</span>
+                    </div>
+                    <div id="legendIncorrect" class="hidden flex items-center space-x-1.5">
+                        <span class="w-3 h-3 rounded-md bg-rose-600"></span>
+                        <span>Sai</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Main Panel (Question Cards List) -->
+        <section class="lg:col-span-8 space-y-6">
+            <div class="hero-banner rounded-3xl p-6 sm:p-8 shadow-2xl">
+                <div class="relative z-10 space-y-4">
+                    <div class="inline-flex items-center space-x-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-pink-300">
+                        <svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg><span>Phòng luyện Ngữ văn</span>
+                    </div>
+                    <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                        Ngữ văn <span class="text-pink-300">ĐGNL</span>
+                    </h1>
+                    <div class="flex flex-wrap gap-2 text-[11px] sm:text-xs text-slate-100">
+                        <span class="hero-chip px-3 py-1.5 rounded-full"><svg class="ic mr-1.5 text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg><span id="heroCount">50 câu</span></span>
+                        <span class="hero-chip px-3 py-1.5 rounded-full"><svg class="ic mr-1.5 text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>60 phút</span>
+                        <span class="hero-chip px-3 py-1.5 rounded-full"><svg class="ic mr-1.5 text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>Đánh dấu câu làm sau</span>
+                        <span class="hero-chip px-3 py-1.5 rounded-full"><svg class="ic mr-1.5 text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>Lời giải từng bước</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between px-1 text-xs text-slate-400">
+                <span>Tổng cộng <strong id="visibleCount" class="text-indigo-400">0</strong> câu hỏi</span>
+                <button onclick="scrollToTop()" class="hover:text-slate-200 transition flex items-center space-x-1">
+                    <svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+                    <span>Lên đầu trang</span>
+                </button>
+            </div>
+
+            <!-- Dynamic Question Cards Stream -->
+            <div id="questionsContainer" class="space-y-6">
+                <!-- Dynamically populated question cards -->
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-pink-500/15 mt-6 py-5 text-center text-[11px] text-slate-400">
+        <span class="font-display text-pink-300">Ngữ văn ĐGNL - Đề số 5</span> · Phòng luyện Ngữ văn ĐGNL
+    
+        <div class="mt-3 flex items-center justify-center gap-1.5 text-slate-300 text-xs">
+            <svg class="ic text-pink-300" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M14.83 14.83a4 4 0 1 1 0-5.66"/></svg>
+            <span>2026 Bản quyền thuộc về <strong class="font-display text-pink-300 tracking-wide">ManhDucPham</strong></span>
+        </div>
+    </footer>
+
+    <div id="resultModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="glass-card max-w-lg w-full rounded-3xl p-6 sm:p-8 space-y-6 transform scale-95 transition-all duration-300 border border-slate-700 shadow-2xl relative">
+            
+            <div class="text-center space-y-2">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-indigo-700 to-purple-600 shadow-lg shadow-indigo-900/50 ring-1 ring-pink-300/40 mb-2">
+                    <svg class="ic text-2xl text-amber-300" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-1.21 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98 1.21 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                </div>
+                <h2 class="text-2xl font-black text-slate-100">KẾT QUẢ BÀI THI</h2>
+                <p class="text-xs text-slate-400">Ngữ văn ĐGNL - Đề số 5</p>
+            </div>
+
+            <!-- Final Score Display -->
+            <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 text-center space-y-1">
+                <div class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Điểm Số Đạt Được</div>
+                <div class="text-5xl font-black bg-gradient-to-r from-pink-300 via-pink-400 to-indigo-300 bg-clip-text font-display text-transparent py-1">
+                    <span id="finalScore">0.0</span> <span class="text-xl text-slate-500 font-normal">/ 10</span>
+                </div>
+                <p id="scoreGrade" class="text-xs font-medium text-emerald-400 pt-1">Hoàn thành bài thi!</p>
+            </div>
+
+            <!-- Breakdown Statistics Grid -->
+            <div class="grid grid-cols-3 gap-3">
+                <div class="bg-slate-900/60 p-3 rounded-xl border border-emerald-500/20 text-center">
+                    <div class="text-[11px] text-slate-400">Câu Đúng</div>
+                    <div id="modalCorrect" class="text-lg font-bold text-emerald-400 mt-0.5">0</div>
+                </div>
+                <div class="bg-slate-900/60 p-3 rounded-xl border border-rose-500/20 text-center">
+                    <div class="text-[11px] text-slate-400">Câu Sai</div>
+                    <div id="modalIncorrect" class="text-lg font-bold text-rose-400 mt-0.5">0</div>
+                </div>
+                <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50 text-center">
+                    <div class="text-[11px] text-slate-400">Chưa Làm</div>
+                    <div id="modalSkipped" class="text-lg font-bold text-slate-400 mt-0.5">0</div>
+                </div>
+            </div>
+
+            <!-- Time Taken Info -->
+            <div class="flex items-center justify-between text-xs text-slate-400 bg-slate-900/40 px-4 py-2.5 rounded-xl border border-slate-800">
+                <span><svg class="ic text-indigo-400 mr-1.5" viewBox="0 0 24 24" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>Thời gian hoàn thành:</span>
+                <span id="timeSpentText" class="font-bold text-slate-200">--:--</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="grid grid-cols-2 gap-3 pt-2">
+                <button onclick="closeResultModal()" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-xl border border-slate-700 transition">
+                    <svg class="ic mr-1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg> Xem Lời Giải
+                </button>
+                <button onclick="restartTest()" class="w-full py-3 bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-400 hover:to-indigo-500 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-900/40 ring-1 ring-pink-300/30 transition">
+                    <svg class="ic mr-1.5 " viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg> Làm Lại
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="glass-card max-w-sm w-full rounded-2xl p-6 text-center space-y-4 border border-slate-700 shadow-2xl">
+            <div class="w-12 h-12 bg-indigo-500/10 text-indigo-400 rounded-full flex items-center justify-center mx-auto">
+                <svg class="ic text-xl" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+            </div>
+            <h3 id="confirmTitle" class="text-lg font-bold text-slate-100">Xác nhận</h3>
+            <p id="confirmDesc" class="text-xs text-slate-300 leading-relaxed">Bạn có chắc chắn muốn làm điều này?</p>
+            <div class="grid grid-cols-2 gap-3 pt-2">
+                <button id="confirmCancelBtn" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold rounded-xl border border-slate-700">Hủy bỏ</button>
+                <button id="confirmOkBtn" class="py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold rounded-xl shadow-md">Đồng ý</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Master Question Dataset (Options[0] is original correct answer)
+        const RAW_QUESTION_BANK = [
+          {
+            "id": 1,
+            "question": "Nội dung chính của đoạn trích trên là gì?",
+            "options": [
+              "Mị cắt dây trói cứu A Phủ",
+              "Mị sau đêm tình mùa xuân",
+              "Sức sống tiềm tàng của Mị",
+              "Mị ngồi sưởi lửa trong đêm đông"
+            ],
+            "answer": 0,
+            "explanation": "Đoạn trích kể việc Mị cắt dây mây cởi trói cứu A Phủ.",
+            "passage": "<p>Đám than đã vạc hẳn lửa. Mị không thổi cũng không đứng lên. Mị nhớ lại đời mình. Mị tưởng tượng như có thể một lúc nào, biết đâu A Phủ chẳng trốn được rồi, lúc đó bố con thống lý sẽ đổ là Mị đã cởi trói cho nó, Mị liền phải trói thay vào đấy. Mị chết trên cái cọc ấy. Nghĩ thế, nhưng làm sao Mị cũng không thấy sợ...Trong nhà tối bưng, Mị rón rén bước lại, A Phủ vẫn nhắm mắt. Nhưng Mị tưởng như A Phủ biết có người bước lại... Mị rút con dao nhỏ cắt lúa, cắt nút dây mây. A Phủ thở phè từng hơi, như rắn thở, không biết mê hay tỉnh.Lần lần, đến lúc gỡ được hết dây trói ở người A Phủ thì Mị cũng hốt hoảng. Mị chỉ thì thào được một tiếng &quot;Đi đi...&quot; rồi Mị nghẹn lại. A Phủ khuỵu xuống không bước nổi. Nhưng trước cái chết có thể đến nơi ngay, A Phủ lại quật sức vùng lên, chạy.</p><p>Mị đứng lặng trong bóng tối.</p><p>Trời tối lắm. Mị vẫn băng đi. Mị đuổi kịp A Phủ, đã lăn, chạy xuống tới lưng dốc. (Trích Vợ chồng A Phủ - Tô Hoài, Ngữ văn 12, Tập hai, NXB Giáo dục)</p>",
+            "group": 1,
+            "range": [
+              1,
+              5
+            ]
+          },
+          {
+            "id": 2,
+            "question": "Trong đoạn trích trên có mấy từ láy?",
+            "options": [
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "answer": 1,
+            "explanation": "Ba từ láy trong đoạn trích: **hốt hoảng, rón rén, thì thào**.",
+            "passage": "<p>Đám than đã vạc hẳn lửa. Mị không thổi cũng không đứng lên. Mị nhớ lại đời mình. Mị tưởng tượng như có thể một lúc nào, biết đâu A Phủ chẳng trốn được rồi, lúc đó bố con thống lý sẽ đổ là Mị đã cởi trói cho nó, Mị liền phải trói thay vào đấy. Mị chết trên cái cọc ấy. Nghĩ thế, nhưng làm sao Mị cũng không thấy sợ...Trong nhà tối bưng, Mị rón rén bước lại, A Phủ vẫn nhắm mắt. Nhưng Mị tưởng như A Phủ biết có người bước lại... Mị rút con dao nhỏ cắt lúa, cắt nút dây mây. A Phủ thở phè từng hơi, như rắn thở, không biết mê hay tỉnh.Lần lần, đến lúc gỡ được hết dây trói ở người A Phủ thì Mị cũng hốt hoảng. Mị chỉ thì thào được một tiếng &quot;Đi đi...&quot; rồi Mị nghẹn lại. A Phủ khuỵu xuống không bước nổi. Nhưng trước cái chết có thể đến nơi ngay, A Phủ lại quật sức vùng lên, chạy.</p><p>Mị đứng lặng trong bóng tối.</p><p>Trời tối lắm. Mị vẫn băng đi. Mị đuổi kịp A Phủ, đã lăn, chạy xuống tới lưng dốc. (Trích Vợ chồng A Phủ - Tô Hoài, Ngữ văn 12, Tập hai, NXB Giáo dục)</p>",
+            "group": 1,
+            "range": [
+              1,
+              5
+            ]
+          },
+          {
+            "id": 3,
+            "question": "Phương thức biểu đạt chính được sử dụng trong đoạn trích trên là gì?",
+            "options": [
+              "Nghị luận",
+              "Miêu tả",
+              "Tự sự",
+              "Biểu cảm"
+            ],
+            "answer": 2,
+            "explanation": "Đoạn trích kể chuỗi hành động nối tiếp: Mị cắt dây trói, A Phủ chạy, Mị đuổi theo. Phương thức chính là tự sự.",
+            "passage": "<p>Đám than đã vạc hẳn lửa. Mị không thổi cũng không đứng lên. Mị nhớ lại đời mình. Mị tưởng tượng như có thể một lúc nào, biết đâu A Phủ chẳng trốn được rồi, lúc đó bố con thống lý sẽ đổ là Mị đã cởi trói cho nó, Mị liền phải trói thay vào đấy. Mị chết trên cái cọc ấy. Nghĩ thế, nhưng làm sao Mị cũng không thấy sợ...Trong nhà tối bưng, Mị rón rén bước lại, A Phủ vẫn nhắm mắt. Nhưng Mị tưởng như A Phủ biết có người bước lại... Mị rút con dao nhỏ cắt lúa, cắt nút dây mây. A Phủ thở phè từng hơi, như rắn thở, không biết mê hay tỉnh.Lần lần, đến lúc gỡ được hết dây trói ở người A Phủ thì Mị cũng hốt hoảng. Mị chỉ thì thào được một tiếng &quot;Đi đi...&quot; rồi Mị nghẹn lại. A Phủ khuỵu xuống không bước nổi. Nhưng trước cái chết có thể đến nơi ngay, A Phủ lại quật sức vùng lên, chạy.</p><p>Mị đứng lặng trong bóng tối.</p><p>Trời tối lắm. Mị vẫn băng đi. Mị đuổi kịp A Phủ, đã lăn, chạy xuống tới lưng dốc. (Trích Vợ chồng A Phủ - Tô Hoài, Ngữ văn 12, Tập hai, NXB Giáo dục)</p>",
+            "group": 1,
+            "range": [
+              1,
+              5
+            ]
+          },
+          {
+            "id": 4,
+            "question": "Câu văn “Mị đứng lặng trong bóng tối” được tách thành dòng riêng có ý nghĩa gì?",
+            "options": [
+              "Để tạo nên sự hài hoà và cân đối về mặt hình thức",
+              "Thể hiện sự đấu tranh nội tâm của Mị.",
+              "Khép lại cuộc đời nô lệ của Mị",
+              "Mở ra chặng đường mới trong cuộc đời của Mị"
+            ],
+            "answer": 1,
+            "explanation": "Câu văn ngắn, tách thành dòng riêng tạo quãng lặng, nhấn vào khoảnh khắc đấu tranh nội tâm của Mị trước khi quyết định bỏ đi.",
+            "passage": "<p>Đám than đã vạc hẳn lửa. Mị không thổi cũng không đứng lên. Mị nhớ lại đời mình. Mị tưởng tượng như có thể một lúc nào, biết đâu A Phủ chẳng trốn được rồi, lúc đó bố con thống lý sẽ đổ là Mị đã cởi trói cho nó, Mị liền phải trói thay vào đấy. Mị chết trên cái cọc ấy. Nghĩ thế, nhưng làm sao Mị cũng không thấy sợ...Trong nhà tối bưng, Mị rón rén bước lại, A Phủ vẫn nhắm mắt. Nhưng Mị tưởng như A Phủ biết có người bước lại... Mị rút con dao nhỏ cắt lúa, cắt nút dây mây. A Phủ thở phè từng hơi, như rắn thở, không biết mê hay tỉnh.Lần lần, đến lúc gỡ được hết dây trói ở người A Phủ thì Mị cũng hốt hoảng. Mị chỉ thì thào được một tiếng &quot;Đi đi...&quot; rồi Mị nghẹn lại. A Phủ khuỵu xuống không bước nổi. Nhưng trước cái chết có thể đến nơi ngay, A Phủ lại quật sức vùng lên, chạy.</p><p>Mị đứng lặng trong bóng tối.</p><p>Trời tối lắm. Mị vẫn băng đi. Mị đuổi kịp A Phủ, đã lăn, chạy xuống tới lưng dốc. (Trích Vợ chồng A Phủ - Tô Hoài, Ngữ văn 12, Tập hai, NXB Giáo dục)</p>",
+            "group": 1,
+            "range": [
+              1,
+              5
+            ]
+          },
+          {
+            "id": 5,
+            "question": "Hình ảnh cái cọc và dây mây trong đoạn trích có ý nghĩa tượng trưng như thế nào?",
+            "options": [
+              "Là dụng cụ để trói A Phủ",
+              "Tượng trưng cho tội ác nhà thống lí",
+              "Trượng trưng cho quyền lực nhà thống lí",
+              "Tượng trưng cho sự kìm hãm, trói buộc, áp bức của nhà thống lí"
+            ],
+            "answer": 3,
+            "explanation": "Cái cọc và dây mây tượng trưng cho sự kìm hãm, trói buộc, áp bức của nhà thống lí đối với người nghèo.",
+            "passage": "<p>Đám than đã vạc hẳn lửa. Mị không thổi cũng không đứng lên. Mị nhớ lại đời mình. Mị tưởng tượng như có thể một lúc nào, biết đâu A Phủ chẳng trốn được rồi, lúc đó bố con thống lý sẽ đổ là Mị đã cởi trói cho nó, Mị liền phải trói thay vào đấy. Mị chết trên cái cọc ấy. Nghĩ thế, nhưng làm sao Mị cũng không thấy sợ...Trong nhà tối bưng, Mị rón rén bước lại, A Phủ vẫn nhắm mắt. Nhưng Mị tưởng như A Phủ biết có người bước lại... Mị rút con dao nhỏ cắt lúa, cắt nút dây mây. A Phủ thở phè từng hơi, như rắn thở, không biết mê hay tỉnh.Lần lần, đến lúc gỡ được hết dây trói ở người A Phủ thì Mị cũng hốt hoảng. Mị chỉ thì thào được một tiếng &quot;Đi đi...&quot; rồi Mị nghẹn lại. A Phủ khuỵu xuống không bước nổi. Nhưng trước cái chết có thể đến nơi ngay, A Phủ lại quật sức vùng lên, chạy.</p><p>Mị đứng lặng trong bóng tối.</p><p>Trời tối lắm. Mị vẫn băng đi. Mị đuổi kịp A Phủ, đã lăn, chạy xuống tới lưng dốc. (Trích Vợ chồng A Phủ - Tô Hoài, Ngữ văn 12, Tập hai, NXB Giáo dục)</p>",
+            "group": 1,
+            "range": [
+              1,
+              5
+            ]
+          },
+          {
+            "id": 6,
+            "question": "Xác định phong cách ngôn ngữ của đoạn trích?",
+            "options": [
+              "Chính luận",
+              "Khoa học",
+              "Nghệ thuật",
+              "Báo chí"
+            ],
+            "answer": 0,
+            "explanation": "Văn bản bàn về vai trò của tiếng mẹ đẻ với vận mệnh dân tộc, lập luận chặt chẽ, mang tính chính trị - xã hội: phong cách chính luận.",
+            "passage": "<p>“… Tiếng nói là người bảo vệ quý báu nhất nền độc lập của các dân tộc, là yếu tố quan trọng nhất giúp giải phóng các dân tộc bị thống trị. Nếu người An Nam hãnh diện giữ gìn tiếng nói của mình và ra sức làm cho tiếng nói ấy phong phú hơn để có khả năng phổ biến tại An Nam các học thuyết đạo đức và khoa học của châu Âu, việc giải phóng dân tộc An Nam chỉ còn là vấn đề thời gian. Bất cứ người An Nam nào vứt bỏ tiếng nói của mình, thì cũng đương nhiên khước từ niềm hi vọng giải phóng giống nòi. […] Vì thế, đối với người An Nam chúng ta, chối từ tiếng mẹ đẻ đồng nghĩa với từ chối sự tự do của mình…”</p><p class=\"pcite\">(Trích Tiếng mẹ đẻ – nguồn giải phóng các dân tộc bị áp bức, Nguyễn An Ninh, SGK Ngữ văn 11, Tập hai, NXB Giáo dục, 2014, tr. 90)</p>",
+            "group": 6,
+            "range": [
+              6,
+              10
+            ]
+          },
+          {
+            "id": 7,
+            "question": "Trong đoạn trích, tác giả chủ yếu sử dụng thao tác lập luận nào?",
+            "options": [
+              "Phân tích",
+              "Chứng minh",
+              "Bình luận",
+              "Giải thích"
+            ],
+            "answer": 2,
+            "explanation": "Tác giả đánh giá, bàn bạc về vai trò của tiếng nói đối với việc giải phóng dân tộc: thao tác bình luận.",
+            "passage": "<p>“… Tiếng nói là người bảo vệ quý báu nhất nền độc lập của các dân tộc, là yếu tố quan trọng nhất giúp giải phóng các dân tộc bị thống trị. Nếu người An Nam hãnh diện giữ gìn tiếng nói của mình và ra sức làm cho tiếng nói ấy phong phú hơn để có khả năng phổ biến tại An Nam các học thuyết đạo đức và khoa học của châu Âu, việc giải phóng dân tộc An Nam chỉ còn là vấn đề thời gian. Bất cứ người An Nam nào vứt bỏ tiếng nói của mình, thì cũng đương nhiên khước từ niềm hi vọng giải phóng giống nòi. […] Vì thế, đối với người An Nam chúng ta, chối từ tiếng mẹ đẻ đồng nghĩa với từ chối sự tự do của mình…”</p><p class=\"pcite\">(Trích Tiếng mẹ đẻ – nguồn giải phóng các dân tộc bị áp bức, Nguyễn An Ninh, SGK Ngữ văn 11, Tập hai, NXB Giáo dục, 2014, tr. 90)</p>",
+            "group": 6,
+            "range": [
+              6,
+              10
+            ]
+          },
+          {
+            "id": 8,
+            "question": "Câu nào là câu chủ đề của đoạn trích?",
+            "options": [
+              "Tiếng nói là người bảo vệ quý báu nhất nền độc lập của các dân tộc, là yếu tố quan trọng nhất giúp giải phóng các dân tộc bị thống trị.",
+              "Đối với người An Nam chúng ta, chối từ tiếng mẹ đẻ đồng nghĩa với từ chối sự tự do của mình….",
+              "Bất cứ người An Nam nào vứt bỏ tiếng nói của mình, thì cũng đương nhiên khước từ niềm hi vọng giải phóng giống nòi.",
+              "Việc giải phóng dân tộc An Nam chỉ còn là vấn đề thời gian."
+            ],
+            "answer": 0,
+            "explanation": "Câu đầu nêu luận điểm bao trùm, các câu sau triển khai nên là câu chủ đề.",
+            "passage": "<p>“… Tiếng nói là người bảo vệ quý báu nhất nền độc lập của các dân tộc, là yếu tố quan trọng nhất giúp giải phóng các dân tộc bị thống trị. Nếu người An Nam hãnh diện giữ gìn tiếng nói của mình và ra sức làm cho tiếng nói ấy phong phú hơn để có khả năng phổ biến tại An Nam các học thuyết đạo đức và khoa học của châu Âu, việc giải phóng dân tộc An Nam chỉ còn là vấn đề thời gian. Bất cứ người An Nam nào vứt bỏ tiếng nói của mình, thì cũng đương nhiên khước từ niềm hi vọng giải phóng giống nòi. […] Vì thế, đối với người An Nam chúng ta, chối từ tiếng mẹ đẻ đồng nghĩa với từ chối sự tự do của mình…”</p><p class=\"pcite\">(Trích Tiếng mẹ đẻ – nguồn giải phóng các dân tộc bị áp bức, Nguyễn An Ninh, SGK Ngữ văn 11, Tập hai, NXB Giáo dục, 2014, tr. 90)</p>",
+            "group": 6,
+            "range": [
+              6,
+              10
+            ]
+          },
+          {
+            "id": 9,
+            "question": "Theo tác giả, nếu người An Nam vứt bỏ tiếng nói của mình sẽ dẫn đến hậu quả gì?",
+            "options": [
+              "Đất nước bị xâm lược",
+              "Không thể hội nhập và phát triển",
+              "Từ chối quyền tự do, bình đẳng",
+              "Từ bỏ niềm hi vọng giải phóng gióng nòi"
+            ],
+            "answer": 3,
+            "explanation": "Theo tác giả, vứt bỏ tiếng nói là khước từ niềm hi vọng giải phóng giống nòi.",
+            "passage": "<p>“… Tiếng nói là người bảo vệ quý báu nhất nền độc lập của các dân tộc, là yếu tố quan trọng nhất giúp giải phóng các dân tộc bị thống trị. Nếu người An Nam hãnh diện giữ gìn tiếng nói của mình và ra sức làm cho tiếng nói ấy phong phú hơn để có khả năng phổ biến tại An Nam các học thuyết đạo đức và khoa học của châu Âu, việc giải phóng dân tộc An Nam chỉ còn là vấn đề thời gian. Bất cứ người An Nam nào vứt bỏ tiếng nói của mình, thì cũng đương nhiên khước từ niềm hi vọng giải phóng giống nòi. […] Vì thế, đối với người An Nam chúng ta, chối từ tiếng mẹ đẻ đồng nghĩa với từ chối sự tự do của mình…”</p><p class=\"pcite\">(Trích Tiếng mẹ đẻ – nguồn giải phóng các dân tộc bị áp bức, Nguyễn An Ninh, SGK Ngữ văn 11, Tập hai, NXB Giáo dục, 2014, tr. 90)</p>",
+            "group": 6,
+            "range": [
+              6,
+              10
+            ]
+          },
+          {
+            "id": 10,
+            "question": "Nội dung chính của đoạn trích trên là gì?",
+            "options": [
+              "Tầm quan trọng của tiếng nói đối với vận mệnh dân tộc.",
+              "Cách làm cho tiếng nói dân tộc phong phú hơn.",
+              "Cách giữ gìn sự trong sáng của tiếng nói dân tộc.",
+              "Cách để giải phóng dân tộc An Nam"
+            ],
+            "answer": 0,
+            "explanation": "Đoạn trích tập trung khẳng định tầm quan trọng của tiếng nói đối với vận mệnh dân tộc.",
+            "passage": "<p>“… Tiếng nói là người bảo vệ quý báu nhất nền độc lập của các dân tộc, là yếu tố quan trọng nhất giúp giải phóng các dân tộc bị thống trị. Nếu người An Nam hãnh diện giữ gìn tiếng nói của mình và ra sức làm cho tiếng nói ấy phong phú hơn để có khả năng phổ biến tại An Nam các học thuyết đạo đức và khoa học của châu Âu, việc giải phóng dân tộc An Nam chỉ còn là vấn đề thời gian. Bất cứ người An Nam nào vứt bỏ tiếng nói của mình, thì cũng đương nhiên khước từ niềm hi vọng giải phóng giống nòi. […] Vì thế, đối với người An Nam chúng ta, chối từ tiếng mẹ đẻ đồng nghĩa với từ chối sự tự do của mình…”</p><p class=\"pcite\">(Trích Tiếng mẹ đẻ – nguồn giải phóng các dân tộc bị áp bức, Nguyễn An Ninh, SGK Ngữ văn 11, Tập hai, NXB Giáo dục, 2014, tr. 90)</p>",
+            "group": 6,
+            "range": [
+              6,
+              10
+            ]
+          },
+          {
+            "id": 11,
+            "question": "Phương thức biểu đạt chính được sử dụng trong đoạn trích là gì?",
+            "options": [
+              "Nghị luận",
+              "Thuyết minh",
+              "Tự sự",
+              "Biểu cảm"
+            ],
+            "answer": 0,
+            "explanation": "Đoạn trích bàn luận, đánh giá về hảo danh và lập danh: phương thức nghị luận.",
+            "passage": "<p>&quot;Hảo danh là từ có ý nghĩa tiêu cực. Đầu tiên là anh coi trọng danh tiếng trên mức cần thiết. Thứ hai là anh coi trọng danh tiếng trên mức mà anh có. Có lẽ, hảo danh phản ánh cả hai khía cạnh đó&quot;, TS. Nguyễn Sĩ Dũng – Nguyên Phó Chủ nhiệm Văn phòng Quốc hội chia sẻ.</p><p>Xét trên nghĩa tích cực, ai cũng có nhu cầu trở thành một người có giá trị, có đóng góp cho cộng đồng, xã hội. Lập danh là một khát vọng chính đáng nếu khẳng định bằng chính năng lực của mình và được xã hội công nhận. Ngược lại, cái danh trở thành phương tiện thay vì mục tiêu, <strong>nó</strong> trở thành một thứ hàng hóa, từ đó lệch lạc giá trị đích thực.</p><p>&quot;Công danh không phải cho cá nhân mà là cống hiến cho tổ quốc, cho cộng đồng thì danh tiếng mới có giá trị. Giá trị của một doanh nghiệp, một con người, cộng đồng được xác định một cách chính xác, nhân văn, chứ không phải là đi quảng bá, tuyên truyền rầm rộ. Điều đó không được&quot;, PGS.TS Nguyễn Thế Kỷ - Chủ tịch Hội đồng Lý luận, phê bình văn học – nghệ thuật trung ương cho biết.</p><p class=\"pcite\">(Trích Hảo danh nằm sâu trong nguồn gốc của văn hóa người Việt. Báo điện tử Vtv.vn ngày 06/04/2023)</p>",
+            "group": 11,
+            "range": [
+              11,
+              16
+            ]
+          },
+          {
+            "id": 12,
+            "question": "Theo đoạn trích, hảo danh có nghĩa là gì?",
+            "options": [
+              "Là coi trọng danh tiếng trên mức cần thiết, làm mọi việc để có được danh tiếng.",
+              "Là coi trọng danh tiếng trên mức cần thiết và coi trọng danh tiếng trên mức mình có.",
+              "Là khát vọng lập danh bằng năng lực của bản thân và được xa hội chấp nhận",
+              "Là nhu cầu của con người muốn lập danh khẳng định giá trị bản thân và cống hiến cho xã hội."
+            ],
+            "answer": 0,
+            "explanation": "Theo đoạn trích, hảo danh mang nghĩa tiêu cực: coi trọng danh tiếng quá mức cần thiết, làm mọi việc để có danh tiếng.",
+            "passage": "<p>&quot;Hảo danh là từ có ý nghĩa tiêu cực. Đầu tiên là anh coi trọng danh tiếng trên mức cần thiết. Thứ hai là anh coi trọng danh tiếng trên mức mà anh có. Có lẽ, hảo danh phản ánh cả hai khía cạnh đó&quot;, TS. Nguyễn Sĩ Dũng – Nguyên Phó Chủ nhiệm Văn phòng Quốc hội chia sẻ.</p><p>Xét trên nghĩa tích cực, ai cũng có nhu cầu trở thành một người có giá trị, có đóng góp cho cộng đồng, xã hội. Lập danh là một khát vọng chính đáng nếu khẳng định bằng chính năng lực của mình và được xã hội công nhận. Ngược lại, cái danh trở thành phương tiện thay vì mục tiêu, <strong>nó</strong> trở thành một thứ hàng hóa, từ đó lệch lạc giá trị đích thực.</p><p>&quot;Công danh không phải cho cá nhân mà là cống hiến cho tổ quốc, cho cộng đồng thì danh tiếng mới có giá trị. Giá trị của một doanh nghiệp, một con người, cộng đồng được xác định một cách chính xác, nhân văn, chứ không phải là đi quảng bá, tuyên truyền rầm rộ. Điều đó không được&quot;, PGS.TS Nguyễn Thế Kỷ - Chủ tịch Hội đồng Lý luận, phê bình văn học – nghệ thuật trung ương cho biết.</p><p class=\"pcite\">(Trích Hảo danh nằm sâu trong nguồn gốc của văn hóa người Việt. Báo điện tử Vtv.vn ngày 06/04/2023)</p>",
+            "group": 11,
+            "range": [
+              11,
+              16
+            ]
+          },
+          {
+            "id": 13,
+            "question": "Từ “nó” (gạch chân, in đậm) có nghĩa là gì?",
+            "options": [
+              "Hảo danh",
+              "Cái danh",
+              "Khát vọng",
+              "Giá trị bản thân"
+            ],
+            "answer": 1,
+            "explanation": "Từ \"nó\" thay thế cho \"cái danh\" ở vế câu liền trước.",
+            "passage": "<p>&quot;Hảo danh là từ có ý nghĩa tiêu cực. Đầu tiên là anh coi trọng danh tiếng trên mức cần thiết. Thứ hai là anh coi trọng danh tiếng trên mức mà anh có. Có lẽ, hảo danh phản ánh cả hai khía cạnh đó&quot;, TS. Nguyễn Sĩ Dũng – Nguyên Phó Chủ nhiệm Văn phòng Quốc hội chia sẻ.</p><p>Xét trên nghĩa tích cực, ai cũng có nhu cầu trở thành một người có giá trị, có đóng góp cho cộng đồng, xã hội. Lập danh là một khát vọng chính đáng nếu khẳng định bằng chính năng lực của mình và được xã hội công nhận. Ngược lại, cái danh trở thành phương tiện thay vì mục tiêu, <strong>nó</strong> trở thành một thứ hàng hóa, từ đó lệch lạc giá trị đích thực.</p><p>&quot;Công danh không phải cho cá nhân mà là cống hiến cho tổ quốc, cho cộng đồng thì danh tiếng mới có giá trị. Giá trị của một doanh nghiệp, một con người, cộng đồng được xác định một cách chính xác, nhân văn, chứ không phải là đi quảng bá, tuyên truyền rầm rộ. Điều đó không được&quot;, PGS.TS Nguyễn Thế Kỷ - Chủ tịch Hội đồng Lý luận, phê bình văn học – nghệ thuật trung ương cho biết.</p><p class=\"pcite\">(Trích Hảo danh nằm sâu trong nguồn gốc của văn hóa người Việt. Báo điện tử Vtv.vn ngày 06/04/2023)</p>",
+            "group": 11,
+            "range": [
+              11,
+              16
+            ]
+          },
+          {
+            "id": 14,
+            "question": "Câu “thói háo danh trong xã hội khiến cho những người có năng lực thực sự sẽ cảm thấy tiêu cực, chán nản và mất ý chí phấn đấu” sử dụng biện pháp tu từ gì?",
+            "options": [
+              "Liệt kê",
+              "Hoán dụ",
+              "Ẩn dụ",
+              "Nói quá"
+            ],
+            "answer": 0,
+            "explanation": "Câu liệt kê hàng loạt trạng thái: tiêu cực, chán nản, mất ý chí phấn đấu.",
+            "passage": "<p>&quot;Hảo danh là từ có ý nghĩa tiêu cực. Đầu tiên là anh coi trọng danh tiếng trên mức cần thiết. Thứ hai là anh coi trọng danh tiếng trên mức mà anh có. Có lẽ, hảo danh phản ánh cả hai khía cạnh đó&quot;, TS. Nguyễn Sĩ Dũng – Nguyên Phó Chủ nhiệm Văn phòng Quốc hội chia sẻ.</p><p>Xét trên nghĩa tích cực, ai cũng có nhu cầu trở thành một người có giá trị, có đóng góp cho cộng đồng, xã hội. Lập danh là một khát vọng chính đáng nếu khẳng định bằng chính năng lực của mình và được xã hội công nhận. Ngược lại, cái danh trở thành phương tiện thay vì mục tiêu, <strong>nó</strong> trở thành một thứ hàng hóa, từ đó lệch lạc giá trị đích thực.</p><p>&quot;Công danh không phải cho cá nhân mà là cống hiến cho tổ quốc, cho cộng đồng thì danh tiếng mới có giá trị. Giá trị của một doanh nghiệp, một con người, cộng đồng được xác định một cách chính xác, nhân văn, chứ không phải là đi quảng bá, tuyên truyền rầm rộ. Điều đó không được&quot;, PGS.TS Nguyễn Thế Kỷ - Chủ tịch Hội đồng Lý luận, phê bình văn học – nghệ thuật trung ương cho biết.</p><p class=\"pcite\">(Trích Hảo danh nằm sâu trong nguồn gốc của văn hóa người Việt. Báo điện tử Vtv.vn ngày 06/04/2023)</p>",
+            "group": 11,
+            "range": [
+              11,
+              16
+            ]
+          },
+          {
+            "id": 15,
+            "question": "Qua đoạn trích, em hiểu thế nào là lập danh chính đáng?",
+            "options": [
+              "Lập danh bằng năng lực của bản thân và được gia đình ủng hộ",
+              "Lập danh bằng năng lực của bản thân và được xã hội chấp nhận",
+              "Lập danh theo ước mơ của bản thân và được xã hội chấp nhận",
+              "Lập danh theo năng lực của bản thân và định hướng của gia đình."
+            ],
+            "answer": 1,
+            "explanation": "Đoạn trích nêu lập danh chính đáng là khẳng định bằng chính năng lực của mình và được xã hội công nhận.",
+            "passage": "<p>&quot;Hảo danh là từ có ý nghĩa tiêu cực. Đầu tiên là anh coi trọng danh tiếng trên mức cần thiết. Thứ hai là anh coi trọng danh tiếng trên mức mà anh có. Có lẽ, hảo danh phản ánh cả hai khía cạnh đó&quot;, TS. Nguyễn Sĩ Dũng – Nguyên Phó Chủ nhiệm Văn phòng Quốc hội chia sẻ.</p><p>Xét trên nghĩa tích cực, ai cũng có nhu cầu trở thành một người có giá trị, có đóng góp cho cộng đồng, xã hội. Lập danh là một khát vọng chính đáng nếu khẳng định bằng chính năng lực của mình và được xã hội công nhận. Ngược lại, cái danh trở thành phương tiện thay vì mục tiêu, <strong>nó</strong> trở thành một thứ hàng hóa, từ đó lệch lạc giá trị đích thực.</p><p>&quot;Công danh không phải cho cá nhân mà là cống hiến cho tổ quốc, cho cộng đồng thì danh tiếng mới có giá trị. Giá trị của một doanh nghiệp, một con người, cộng đồng được xác định một cách chính xác, nhân văn, chứ không phải là đi quảng bá, tuyên truyền rầm rộ. Điều đó không được&quot;, PGS.TS Nguyễn Thế Kỷ - Chủ tịch Hội đồng Lý luận, phê bình văn học – nghệ thuật trung ương cho biết.</p><p class=\"pcite\">(Trích Hảo danh nằm sâu trong nguồn gốc của văn hóa người Việt. Báo điện tử Vtv.vn ngày 06/04/2023)</p>",
+            "group": 11,
+            "range": [
+              11,
+              16
+            ]
+          },
+          {
+            "id": 16,
+            "question": "Đoạn thơ trên được viết theo thể thơ nào?",
+            "options": [
+              "Thơ 7 chữ",
+              "Thơ tự do",
+              "Thơ 8 chữ",
+              "Thơ thất ngôn"
+            ],
+            "answer": 2,
+            "explanation": "Mỗi dòng thơ có 8 tiếng, nên đây là thơ 8 chữ.",
+            "passage": "<p>“Nếu Tổ quốc đang bão giông từ biển<br>Có một phần máu thịt ở Hoàng Sa<br>Ngàn năm trước con theo cha xuống biển<br>Mẹ lên rừng thương nhớ mãi Trường Sa<br>Đất Tổ quốc khi chập chờn bóng giặc<br>Các con nằm thao thức phía Trường Sơn<br>Biển Tổ quốc chưa một ngày yên ả<br>Biển cần lao như áo mẹ bạc sờn<br>Nếu Tổ quốc hôm nay nhìn từ biển<br>Mẹ Âu Cơ hẳn không thể yên lòng<br>Sóng lớp lớp đè lên thềm lục địa<br>Trong hồn người có ngọn sóng nào không”.</p><p class=\"pcite\">(Trích Tổ quốc nhìn từ biển — Nguyễn Việt Chiến, ngày 28/5/2011)</p>",
+            "group": 16,
+            "range": [
+              16,
+              20
+            ]
+          },
+          {
+            "id": 17,
+            "question": "Nội dung chính của đoạn thơ trên là gì?",
+            "options": [
+              "Sự trăn trở và lo lắng về tình hình biển đảo quê hương đang bị đe dọa.",
+              "Ý thức trách nhiệm gìn giữ biển đảo quê hương",
+              "Giữ vững chủ quyền biển đảo của dân tộc",
+              "Truyền thống giữ gìn chủ quyền biển đảo của dân tộc"
+            ],
+            "answer": 0,
+            "explanation": "Đoạn thơ thể hiện sự trăn trở, lo lắng trước tình hình biển đảo quê hương đang bị đe dọa.",
+            "passage": "<p>“Nếu Tổ quốc đang bão giông từ biển<br>Có một phần máu thịt ở Hoàng Sa<br>Ngàn năm trước con theo cha xuống biển<br>Mẹ lên rừng thương nhớ mãi Trường Sa<br>Đất Tổ quốc khi chập chờn bóng giặc<br>Các con nằm thao thức phía Trường Sơn<br>Biển Tổ quốc chưa một ngày yên ả<br>Biển cần lao như áo mẹ bạc sờn<br>Nếu Tổ quốc hôm nay nhìn từ biển<br>Mẹ Âu Cơ hẳn không thể yên lòng<br>Sóng lớp lớp đè lên thềm lục địa<br>Trong hồn người có ngọn sóng nào không”.</p><p class=\"pcite\">(Trích Tổ quốc nhìn từ biển — Nguyễn Việt Chiến, ngày 28/5/2011)</p>",
+            "group": 16,
+            "range": [
+              16,
+              20
+            ]
+          },
+          {
+            "id": 18,
+            "question": "Trong hai câu thơ sau “Biển Tổ quốc chưa một ngày yên ả - Biển cần lao như áo mẹ bạc sờn” sử dụng biện pháp tu từ nào?",
+            "options": [
+              "Ẩn dụ, nhân hoá",
+              "Điệp từ, so sánh",
+              "Điệp từ, ẩn dụ",
+              "So sánh, ẩn dụ"
+            ],
+            "answer": 1,
+            "explanation": "Điệp từ \"Biển\" ở đầu hai câu và so sánh \"Biển cần lao như áo mẹ bạc sờn\".",
+            "passage": "<p>“Nếu Tổ quốc đang bão giông từ biển<br>Có một phần máu thịt ở Hoàng Sa<br>Ngàn năm trước con theo cha xuống biển<br>Mẹ lên rừng thương nhớ mãi Trường Sa<br>Đất Tổ quốc khi chập chờn bóng giặc<br>Các con nằm thao thức phía Trường Sơn<br>Biển Tổ quốc chưa một ngày yên ả<br>Biển cần lao như áo mẹ bạc sờn<br>Nếu Tổ quốc hôm nay nhìn từ biển<br>Mẹ Âu Cơ hẳn không thể yên lòng<br>Sóng lớp lớp đè lên thềm lục địa<br>Trong hồn người có ngọn sóng nào không”.</p><p class=\"pcite\">(Trích Tổ quốc nhìn từ biển — Nguyễn Việt Chiến, ngày 28/5/2011)</p>",
+            "group": 16,
+            "range": [
+              16,
+              20
+            ]
+          },
+          {
+            "id": 19,
+            "question": "Phương thức biểu đạt chính của đoạn trích trên là gì?",
+            "options": [
+              "Tự sự",
+              "Miêu tả",
+              "Biểu cảm",
+              "Nghị luận"
+            ],
+            "answer": 2,
+            "explanation": "Đoạn thơ chủ yếu bộc lộ cảm xúc, nỗi niềm của tác giả với biển đảo Tổ quốc: biểu cảm.",
+            "passage": "<p>“Nếu Tổ quốc đang bão giông từ biển<br>Có một phần máu thịt ở Hoàng Sa<br>Ngàn năm trước con theo cha xuống biển<br>Mẹ lên rừng thương nhớ mãi Trường Sa<br>Đất Tổ quốc khi chập chờn bóng giặc<br>Các con nằm thao thức phía Trường Sơn<br>Biển Tổ quốc chưa một ngày yên ả<br>Biển cần lao như áo mẹ bạc sờn<br>Nếu Tổ quốc hôm nay nhìn từ biển<br>Mẹ Âu Cơ hẳn không thể yên lòng<br>Sóng lớp lớp đè lên thềm lục địa<br>Trong hồn người có ngọn sóng nào không”.</p><p class=\"pcite\">(Trích Tổ quốc nhìn từ biển — Nguyễn Việt Chiến, ngày 28/5/2011)</p>",
+            "group": 16,
+            "range": [
+              16,
+              20
+            ]
+          },
+          {
+            "id": 20,
+            "question": "Câu thơ “Ngàn năm trước con theo cha xuống biển -Mẹ lên rừng thương nhớ mãi Trường Sa” gợi nhắc đến truyền thuyết nào?",
+            "options": [
+              "Con rồng cháu tiên",
+              "Sơn Tinh, Thuỷ Tinh",
+              "Thánh Gióng",
+              "An Dương Vương, Mị Châu, Trọng Thuỷ."
+            ],
+            "answer": 0,
+            "explanation": "Hình ảnh con theo cha xuống biển, mẹ lên rừng gợi truyền thuyết Con Rồng cháu Tiên (Lạc Long Quân - Âu Cơ).",
+            "passage": "<p>“Nếu Tổ quốc đang bão giông từ biển<br>Có một phần máu thịt ở Hoàng Sa<br>Ngàn năm trước con theo cha xuống biển<br>Mẹ lên rừng thương nhớ mãi Trường Sa<br>Đất Tổ quốc khi chập chờn bóng giặc<br>Các con nằm thao thức phía Trường Sơn<br>Biển Tổ quốc chưa một ngày yên ả<br>Biển cần lao như áo mẹ bạc sờn<br>Nếu Tổ quốc hôm nay nhìn từ biển<br>Mẹ Âu Cơ hẳn không thể yên lòng<br>Sóng lớp lớp đè lên thềm lục địa<br>Trong hồn người có ngọn sóng nào không”.</p><p class=\"pcite\">(Trích Tổ quốc nhìn từ biển — Nguyễn Việt Chiến, ngày 28/5/2011)</p>",
+            "group": 16,
+            "range": [
+              16,
+              20
+            ]
+          },
+          {
+            "id": 21,
+            "question": "Xác định một từ/ cụm từ SAI về ngữ pháp/ ngữ nghĩa/logic/ phong cách:",
+            "options": [
+              "thiếu thốn",
+              "yêu đời",
+              "chất phát",
+              "hóm hỉnh"
+            ],
+            "answer": 2,
+            "explanation": "Từ **chất phát** dùng sai, sửa lại thành **chất phác**.",
+            "passage": "<p>Nhân vật trong sáng tác của Kim Lân là những người nông dân nghèo khổ, thiếu thốn mà vẫn yêu đời, thật thà, chất phát mà thông minh, hóm hỉnh, tài hoa.</p>",
+            "group": 21
+          },
+          {
+            "id": 22,
+            "question": "Xác định một từ/ cụm từ SAI về ngữ pháp/ ngữ nghĩa/logic/ phong cách:",
+            "options": [
+              "Tài chính",
+              "Phạm vi",
+              "Tổ chức",
+              "Pháp lí"
+            ],
+            "answer": 0,
+            "explanation": "Từ **tài chính** dùng không phù hợp, sửa lại thành **hành chính**.",
+            "passage": "<p>Ngôn ngữ hành chính là ngôn ngữ dùng trong các văn bản tài chính để giao tiếp trong phạm vi các cơ quan nhà nước hay các tổ chức chính trị, xã hội, kinh tế hoặc giữa cơ quan với cá nhân hay giữa các cá nhân với nhau trên cơ sở pháp lí.</p>",
+            "group": 22
+          },
+          {
+            "id": 23,
+            "question": "Xác định một từ/ cụm từ SAI về ngữ pháp/ ngữ nghĩa/logic/ phong cách:",
+            "options": [
+              "cầu kì",
+              "giản dị",
+              "uyên thâm",
+              "khắt khe"
+            ],
+            "answer": 1,
+            "explanation": "Đáp án của đề gốc là **giản dị** (B).",
+            "passage": "<p>Không cầu kỳ như trà đạo Nhật - Chanoyu hay Gongfucha – trà đạo Trung Hoa, trà đạo Việt Nam có phần giản dị hơn trong cách pha chế. Tuy nhiên, người Việt đặc biệt là những người có kiến thức uyên thâm về trà, đặc biệt yêu cầu khắt khe về hương vị.</p>",
+            "group": 23
+          },
+          {
+            "id": 24,
+            "question": "Xác định một từ/ cụm từ SAI về ngữ pháp/ ngữ nghĩa/logic/ phong cách:",
+            "options": [
+              "Xâm nhập",
+              "Thực tế",
+              "Phản ánh",
+              "Chân thực"
+            ],
+            "answer": 0,
+            "explanation": "**Xâm nhập** không phù hợp về sắc thái, nên dùng **thâm nhập** (đi sâu vào đời sống thực tế).",
+            "passage": "<p>Nhà báo phải xâm nhập đời sống thực tế của người dân để phán ánh chân thực vào bài viết của mình.</p>",
+            "group": 24
+          },
+          {
+            "id": 25,
+            "question": "Xác định một từ/ cụm từ SAI về ngữ pháp/ ngữ nghĩa/logic/ phong cách:",
+            "options": [
+              "Bài học",
+              "Phiến diện",
+              "Phát hiện",
+              "Bản chất"
+            ],
+            "answer": 1,
+            "explanation": "**Phiến diện** (một chiều) mâu thuẫn với \"nhiều chiều\", cần dùng từ như \"đa diện\".",
+            "passage": "<p>Truyện ngắn Chiếc thuyền ngoài xa mang đến bài học về cách nhìn nhận cuộc sống và con người: một cách nhìn phiến diện, nhiều chiều, phát hiện ra bản chất thật sau vẻ đẹp bên ngoài của hiện tượng.</p>",
+            "group": 25
+          },
+          {
+            "id": 26,
+            "question": "Chọn một từ mà nghĩa của nó KHÔNG cùng nhóm với các từ còn lại.",
+            "options": [
+              "Sổ",
+              "Vở",
+              "Sách",
+              "Bút"
+            ],
+            "answer": 3,
+            "explanation": "Sổ, vở, sách là vật chứa nội dung chữ viết; bút là dụng cụ để viết nên khác nhóm."
+          },
+          {
+            "id": 27,
+            "question": "Chọn một từ mà nghĩa của nó KHÔNG cùng nhóm với các từ còn lại.",
+            "options": [
+              "Chân tay",
+              "Bàn chân",
+              "Ngón chân",
+              "Chân bàn"
+            ],
+            "answer": 3,
+            "explanation": "Trong chân tay, bàn chân, ngón chân, từ \"chân\" dùng theo nghĩa gốc (bộ phận cơ thể). Ở \"chân bàn\", từ \"chân\" dùng theo nghĩa chuyển."
+          },
+          {
+            "id": 28,
+            "question": "Chọn một tác phẩm KHÔNG cùng thể loại với các tác phẩm còn lại:",
+            "options": [
+              "Vĩnh biệt Cửu Trùng đài",
+              "Hồn Trương Ba, da hàng thịt",
+              "Hạnh phúc của một tang gia",
+              "Tình yêu và thù hận"
+            ],
+            "answer": 2,
+            "explanation": "\"Hạnh phúc của một tang gia\" là đoạn trích tiểu thuyết (Số đỏ); các tác phẩm còn lại là kịch."
+          },
+          {
+            "id": 29,
+            "question": "Chọn một tác giả KHÔNG cùng giai đoạn với các tác giả còn lại:",
+            "options": [
+              "Nguyễn Khuyến",
+              "Nguyễn Công Trứ",
+              "Nguyễn Bỉnh Khiêm",
+              "Nguyễn Bính"
+            ],
+            "answer": 3,
+            "explanation": "Nguyễn Bính thuộc văn học hiện đại; các tác giả còn lại thuộc văn học trung đại."
+          },
+          {
+            "id": 30,
+            "question": "Chọn một tác giả KHÔNG nằm trong nhóm Tự lực văn đoàn:",
+            "options": [
+              "Thạch Lam",
+              "Huy Cận",
+              "Thế Lữ",
+              "Xuân Diệu"
+            ],
+            "answer": 1,
+            "explanation": "Theo đáp án của đề gốc, **Huy Cận** là tác giả không nằm trong nhóm Tự lực văn đoàn."
+          },
+          {
+            "id": 31,
+            "question": "Chọn từ/cụm từ thích hợp nhất để điền vào chỗ trống trong câu dưới đây:",
+            "options": [
+              "Tinh anh",
+              "tinh tường",
+              "tinh nhanh",
+              "đầu tiên"
+            ],
+            "answer": 0,
+            "explanation": "Cách nói quen thuộc khi đánh giá Nguyễn Minh Châu là \"người mở đường tinh anh\" của văn học thời đổi mới.",
+            "passage": "<p>“Nguyễn Minh Châu là một trong những người mở đường ________ của nền văn học trong công cuộc đổi mới.”</p>",
+            "group": 31
+          },
+          {
+            "id": 32,
+            "question": "Chọn từ/cụm từ thích hợp nhất để điền vào chỗ trống trong câu dưới đây:",
+            "options": [
+              "tiếp cận",
+              "tiếp xúc",
+              "tiếp nhận",
+              "Tiếp thu"
+            ],
+            "answer": 2,
+            "explanation": "\"Quá trình tiếp nhận văn học\" là cụm từ chuyên ngành, chỉ việc người đọc đón nhận tác phẩm.",
+            "passage": "<p>“Quá trình ___________ văn học có vai trò, ý nghĩa vô cùng quan trọng trong lịch sử phát triển của văn học.”</p>",
+            "group": 32
+          },
+          {
+            "id": 33,
+            "question": "Chọn từ/cụm từ thích hợp nhất để điền vào chỗ trống trong câu dưới đây:",
+            "options": [
+              "Chính trị",
+              "Chính luận",
+              "Chính sách",
+              "Chính thống"
+            ],
+            "answer": 0,
+            "explanation": "Ngôn ngữ chính luận trình bày theo một quan điểm chính trị nhất định.",
+            "passage": "<p>Ngôn ngữ chính luận là ngôn ngữ dùng trong các văn bản chính luận hoặc lời nói miệng trong các buổi hội nghị, hội thảo, nói chuyện thời sự .nhằm trình bày, bình luận, đánh giá những sự kiện, những vấn đề chính trị, xã hội, văn hoá, tư tưởng theo một quan điểm……………….nhất định.</p>",
+            "group": 33
+          },
+          {
+            "id": 34,
+            "question": "Chọn từ/cụm từ thích hợp nhất để điền vào chỗ trống trong câu dưới đây:",
+            "options": [
+              "Giải thoát/ lên án",
+              "Thoát li/ phê phán",
+              "Thoát li/ tố cáo",
+              "Thăng hoa/ ca ngợi"
+            ],
+            "answer": 2,
+            "explanation": "\"Văn chương không phải một cách đem đến sự thoát li hay sự quên; mà là khí giới để tố cáo và thay đổi thế giới giả dối, tàn ác\".",
+            "passage": "<p>Nguyễn Minh Châu từng khẳng định “Đối với tôi, văn chương không phải một cách đem đến cho người đọc sự ……………. hay sự quên, trái lại, văn chương là một thứ khí giới thanh cao và đắc lực mà chúng ta có để vừa …………………..và thay đổi một cái thế giới giả dối và tàn ác, vừa làm cho lòng người đọc thêm trong sạch và phong phú hơn.”</p>",
+            "group": 34
+          },
+          {
+            "id": 35,
+            "question": "Chọn từ/cụm từ thích hợp nhất để điền vào chỗ trống trong câu dưới đây:",
+            "options": [
+              "Khuôn ép",
+              "Khuôn khổ",
+              "Khuôn mẫu",
+              "Khuôn phép"
+            ],
+            "answer": 2,
+            "explanation": "Đặc trưng của ngôn ngữ hành chính: tính khuôn mẫu, tính chính xác, tính công vụ.",
+            "passage": "<p>Đặc trưng của phong cách ngôn ngữ hành chính là tính………………, tính chính xác và tính công vụ.</p>",
+            "group": 35
+          },
+          {
+            "id": 36,
+            "question": "Hình ảnh đám người đói và lá cờ đỏ bay phấp phới ở cuối bài thể hiện điều gì?",
+            "options": [
+              "Tràng biết hướng đến cách mạng",
+              "Sự hồi tưởng về quá khứ của nhân vật Tràng",
+              "Sự ân hận cuả Tràng",
+              "Khát vọng no đủ của nhân vật Tràng"
+            ],
+            "answer": 0,
+            "explanation": "Hình ảnh đám người đói và lá cờ đỏ trong óc Tràng cho thấy anh bắt đầu hướng về cách mạng.",
+            "passage": "<p>Hôm ấy hắn láng máng nghe người ta nói họ là Việt Minh đấy. Họ đi cướp thóc đấy. Tràng không hiểu gì sợ quá, kéo vội xe thóc của Liên đoàn tắt cánh động đi lối khác. À ra họ đi phá kho thóc chia cho người đói. Tự dưng hắn thấy ân hận, tiếc rẻ vẩn vơ, khó hiểu.</p><p>Ngoài đình tiếng trống thúc thuế vẫn dồn dập. Mẹ và vợ Tràng đã buông đũa đứng dậy.</p><p>Trong óc Tràng vẫn thấy đám người đói và lá cờ đỏ bay phấp phới…</p><p class=\"pcite\">(Trích đoạn trích Vợ nhặt, Kim Lân, SGK Ngữ văn lớp 12, tập 2)</p>",
+            "group": 36
+          },
+          {
+            "id": 37,
+            "question": "Đoạn trích trên thể hiện vẻ đẹp nào của ông Đò?",
+            "options": [
+              "Sự mưu trí",
+              "Sự tài hoa",
+              "Trí dũng",
+              "Sự khiêm nhường, bình dị"
+            ],
+            "answer": 3,
+            "explanation": "Ông Đò coi chuyện chiến đấu với thác dữ là việc thường ngày, không khoe khoang: sự khiêm nhường, bình dị.",
+            "passage": "<p>Đêm ấy nhà đò đốt lửa trong hang đá, nướng ống cơm lam và toàn bàn tán về cá anh vũ cá dầm xanh, về những cái hầm cá hang cá mùa khô nổ những tiếng to như mìn bộc phá rồi cá túa ra đầy tràn ruộng. Cũng chả thấy ai bàn thêm một lời nào về cuộc chiến thắng vừa qua nơi cửa ải nước đủ tướng dữ quân tợn vừa rồi. Cuộc sống của họ là ngày nào cũng chiến đấu với Sông Đà dữ dội, ngày nào cũng giành lấy cái sống từ tay những cái thác, nên nó cũng không có gì là hồi hộp đáng nhớ... Họ nghĩ thế, lúc ngừng chèo.</p><p class=\"pcite\">(Trích Người lái đò Sông Đà – Nguyễn Tuân, Ngữ văn 12, Tập một, NXB Giáo dục)</p>",
+            "group": 37
+          },
+          {
+            "id": 38,
+            "question": "Vì sao Nguyễn Tuân lại gọi đây là cảnh “xưa nay chưa từng có”?",
+            "options": [
+              "Vì người cho chữ là tử tù",
+              "Vì không gian cho chữ là trong phòng giam tử tù.",
+              "Vì trật tự xã hội bị đảo lộn.",
+              "Vì hoàn cảnh cho chữ, tư thế người cho chữ, nhận chữ và ý nghĩa việc cho chữ"
+            ],
+            "answer": 3,
+            "explanation": "Cảnh \"xưa nay chưa từng có\" vì hoàn cảnh, tư thế người cho chữ, người nhận chữ và ý nghĩa việc cho chữ đều đặc biệt: tử tù cho chữ giữa ngục tối.",
+            "passage": "<p>Ðêm hôm ấy, lúc trại giam tỉnh Sơn chỉ còn vẳng có tiếng mõ trên vọng canh, một cảnh tượng xưa nay chưa từng có, đã bày ra trong một buồng tối chật hẹp, ẩm ướt, tường đầy mạng nhện tổ rệp, đất bừa bãi phân chuột phân gián.</p><p>Trong một không khí khói tỏa như đám cháy nhà, ánh sáng đỏ rực của một bó đuốc tẩm dầu rọi lên ba cái đầu người đang chăm chú trên một tấm lụa bạch còn nguyên vẹn lần hồ. Khói bốc tỏa cay mắt, họ dụi mắt lia lịa.</p><p class=\"pcite\">(Trích Chữ người tử tù – Nguyễn Tuân, Ngữ văn 11, Tập một, NXB Giáo dục)</p>",
+            "group": 38
+          },
+          {
+            "id": 39,
+            "question": "Nội dung đoạn trích trên là gì?",
+            "options": [
+              "Sự vui mừng khi được giác ngộ lí tưởng của Đảng",
+              "Nhận thức về lý tưởng cách mạng",
+              "Sự chuyển biến trong tâm trạng người thanh niên khi được giác ngộ lí tưởng cách mạng",
+              "Thể hiện tinh thần lạc quan của người tù chính trị"
+            ],
+            "answer": 2,
+            "explanation": "Khổ thơ diễn tả sự chuyển biến trong tâm trạng người thanh niên khi giác ngộ lí tưởng cách mạng.",
+            "passage": "<p>Từ ấy trong tôi bừng nắng hạ<br>Mặt trời chân lý chói qua tim<br>Hồn tôi là một vườn hoa lá<br>Rất đậm hương và rộn tiếng chim</p><p class=\"pcite\">(Từ ấy – Tố Hữu, Ngữ văn 11, Tập hai, NXB Giáo dục)</p>",
+            "group": 39
+          },
+          {
+            "id": 40,
+            "question": "Từ \"hóa thân\" trong đoạn thơ trên có ý nghĩa gì?",
+            "options": [
+              "Sẵn sàng cống hiến, hi sinh cho Đất Nước",
+              "Khát vọng hòa mình vào đất nước.",
+              "Đất Nước như sinh mệnh mỗi người",
+              "Mỗi người ghi dấu ấn cuộc đời mình với Đất Nước"
+            ],
+            "answer": 0,
+            "explanation": "\"Hóa thân\" là sẵn sàng cống hiến, hi sinh bản thân cho Đất Nước.",
+            "passage": "<p>Em ơi em Đất Nước là máu xương của mình<br>Phải biết gắn bó và san sẻ<br>Phải biết hóa thân cho dáng hình xứ sở<br>Làm nên Đất Nước muôn đời...</p><p class=\"pcite\">(Trích Đất nước – Nguyễn Khoa Điềm, Ngữ văn 12, NXB Giáo dục)</p>",
+            "group": 40
+          },
+          {
+            "id": 41,
+            "question": "Câu thơ “Lặn lội thân cò khi quãng vắng- Eo sèo mặt nước buổi đò đông” sử dụng biện pháp tu từ nào?",
+            "options": [
+              "Đảo ngữ, tương phản đối lập",
+              "Nhân hoá, đảo ngữ",
+              "Hoán dụ, so sánh",
+              "Đảo ngữ, hoán dụ"
+            ],
+            "answer": 0,
+            "explanation": "Đảo ngữ: \"lặn lội\", \"eo sèo\" đặt đầu câu. Tương phản đối lập: \"vắng - đông\".",
+            "passage": "<p>Quanh năm buôn bán ở mom sông,<br>Nuôi đủ năm con với một chồng.<br>Lặn lội thân cò khi quãng vắng,<br>Eo sèo mặt nước buổi đò đông.</p><p class=\"pcite\">(Trích Thương vợ- Tú Xương)</p>",
+            "group": 41
+          },
+          {
+            "id": 42,
+            "question": "Nội dung chính của đoạn trích trên là gì?",
+            "options": [
+              "Sự ngông cuồng của quân giặc",
+              "Tố cáo âm mưu, hành động tội ác của giặc Minh",
+              "Phản ánh đời sống khổ cực của nhân dân ta",
+              "Sự đối lập giữa tội ác của giặc với hành động nhân nghĩa của ta."
+            ],
+            "answer": 1,
+            "explanation": "Đoạn trích liệt kê những việc làm tàn bạo của giặc Minh, nhằm tố cáo âm mưu và tội ác của chúng.",
+            "passage": "<p>Nướng dân đen trên ngọn lửa hung tàn<br>Vùi con đỏ[6] xuống dưới hầm tai vạ<br>Dối trời lừa dân đủ muôn ngàn kế<br>Gây thù kết oán trải mấy mươi năm<br>Bại nhân nghĩa nát cả đất trời.<br>Nặng thuế khoá sạch không đầm núi.<br>Người bị ép xuống biển dòng lưng mò ngọc, ngán thay cá mập thuồng luồng.<br>Kẻ bị đem vào núi đãi cát tìm vàng, khốn nỗi rừng sâu nước độc.<br>Vét sản vật, bắt dò chim trả[7], chốn chốn lưới chăng.<br>Nhiễu nhân dân, bắt bẫy hươu đen, nơi nơi cạm đặt.<br>Tàn hại cả giống côn trùng cây cỏ,</p><p class=\"pcite\">(Trích Đại cáo bình Ngô- Nguyễn Trãi)</p>",
+            "group": 42
+          },
+          {
+            "id": 43,
+            "question": "Đoạn trích trên thuộc thể loại nào?",
+            "options": [
+              "Điều trần",
+              "Cáo",
+              "Chiếu",
+              "Biểu"
+            ],
+            "answer": 0,
+            "explanation": "Văn bản của Nguyễn Trường Tộ kiến nghị với triều đình, thuộc thể loại điều trần.",
+            "passage": "<p>“Nếu bảo luật chỉ tốt cho việc cai trị chứ không có đạo đức tinh vi, thể là không biết rằng trái luật là tội, giữ đúng luật là đức. Nếu tận dụng cái lẽ công bằng ở trong luật mà xử sự thì mọi quyển, pháp đều là đạo đức. Có cái dức nào lớn hơn chi công vô tư không? Chí công vô tư là đức trời. Trong luật cái gì cũng công bằng hợp với đức trời, như vậy mà không dáng gọi là đạo đức tỉnh vi sao&quot; Chỉ sợ con người không tận dụng luật mà thôi. Nếu tận dụng cũng đủ trọn vẹn đạo làm người rồi, bắt tất phải đi tìm cái gì khác”.</p><p class=\"pcite\">(Trích &quot;Xin lập khoa luật&quot; - Nguyễn Trường Tộ - Văn II, tập I- NXBGD 2007)</p>",
+            "group": 43
+          },
+          {
+            "id": 44,
+            "question": "Phong cách ngôn ngữ trong đoạn trích trên là?",
+            "options": [
+              "Khoa học",
+              "Báo chí",
+              "Chính luận",
+              "Nghệ thuật"
+            ],
+            "answer": 0,
+            "explanation": "Đáp án của đề gốc là **Khoa học** (A).",
+            "passage": "<p>“Đời chúng ta nằm trong vòng chữ tôi. Mất bề rộng ta đi tìm bề sâu. Nhưng càng đi sâu càng lạnh. Ta thoát lên tiên cùng Thế Lữ, ta phiêu lưu trong trường tình cùng Lưu Trọng Lư, ta điên cuồng với Hàn Mặc Tử, Chế Lan Viên, ta đắm say cùng Xuân Diệu. Nhưng động tiên đã khép, tình yêu không bền, điên cuồng rồi tỉnh, say đắm vẫn bơ vơ. Ta ngơ ngẩn buồn trở về hồn ta cùng Huy Cận”.</p><p class=\"pcite\">(Trích “Một thời đại trong thi ca”- Hoài Thanh)</p>",
+            "group": 44
+          },
+          {
+            "id": 45,
+            "question": "Nghệ thuật nổi bật trong đoạn trích trên là gì?",
+            "options": [
+              "Miêu tả tâm lí nhân vật",
+              "Đối lập giữa ánh sáng và bóng tối",
+              "Cốt truyện giản dị",
+              "Chọn chi tiết, hình ảnh giàu sức biểu cảm"
+            ],
+            "answer": 1,
+            "explanation": "Đoạn trích chọn lọc chi tiết nhỏ về ánh sáng và bóng tối, giàu sức gợi và biểu cảm.",
+            "passage": "<p>Đêm tối đối với Liên quen lắm, chị không sợ nó nữa. Tối hết cả, con đường thăm thẳm ra sông, con đường qua chợ về nhà, các ngõ vào làng lại sẫm đen hơn nữa. Giờ chỉ còn ngọn đèn con của chị Tí, và cái bếp lửa của bác Siêu chiếu sáng một vùng đất cát; trong cửa hàng, ngọn đèn của Liên, ngọn đèn vặn nhỏ, thưa thớt từng hột sáng lọt qua phên nứa. Tất cả phố xá trong huyện bây giờ thu nhỏ lại nơi hàng nước của chị Tí. Thêm được một gia đình bác xẩm ngồi trên manh chiếu, cái thau sắt trắng để trước mặt, nhưng bác chưa hát vì chưa có khách nghe.</p><p class=\"pcite\">(Trích “Hai đứa trẻ” – Thạch Lam, Ngữ văn 11, Tập một, NXB Giáo dục)</p>",
+            "group": 45
+          },
+          {
+            "id": 46,
+            "question": "Hình ảnh chiếc lò gạch tiếp tục xuất hiện thể hiện điều gì?",
+            "options": [
+              "Phản ánh đời sống nông dân làng Vũ Đại nghèo khổ, hoang tàn như cái lò gạch cũ.",
+              "Thể hiện bị kịch bị bỏ rơi của Chí Phèo",
+              "Nó gợi lên cái vòng luẩn quẩn, bế tắc, đau thương không lối thoát của người nông dân Việt Nam trong xã hội cũ.",
+              "Gợi nơi ra đời của Chí Phèo con"
+            ],
+            "answer": 2,
+            "explanation": "Chiếc lò gạch cũ gợi nơi Chí Phèo ra đời và gợi vòng luẩn quẩn, bế tắc của người nông dân trong xã hội cũ.",
+            "passage": "<p>Thị cười và nói lảng: - Hôm qua làm biên bản, lý Cường nghe đâu tốn gần một trăm. Thiệt người lại tốn của.</p><p>Nhưng thị lại nghĩ thầm: - Sao có lúc nó hiền như đất.</p><p>Và nhớ lại những lúc ăn nằm với hắn, thị nhìn trộm bà cô, rồi nhìn nhanh xuống bụng: - Nói dại, nếu mình chửa, bây giờ hắn chết rồi, thì làm ăn thế nào?</p><p>Ðột nhiên thị thấy thoáng hiện ra một cái lò gạch cũ bỏ không, xa nhà cửa và vắng người qua lại...</p><p class=\"pcite\">(Trích “Chí Phèo” – Nam Cao, Ngữ văn 11, Tập một, NXB Giáo dục)</p>",
+            "group": 46
+          },
+          {
+            "id": 47,
+            "question": "Câu nói “Chúng nó đã cầm súng mình phải cầm giáo” có ý nghĩa gì?",
+            "options": [
+              "Thể hiện quyết tâm chống giặc của nhân dân ta.",
+              "Chân lí phải sử dụng bạo lực Cách mạng để chống lại bạo lực phản Cách mạng.",
+              "Phải có một tinh thần sẵn sàng tham gia chiến đấu",
+              "Thể hiện sức mạnh vùng lên phản kháng của nhân dân ta"
+            ],
+            "answer": 1,
+            "explanation": "Câu nói nêu chân lí: phải dùng bạo lực cách mạng để chống lại bạo lực phản cách mạng.",
+            "passage": "<p>Tnú không cứu được vợ được con. Tối đó Mai chết. Còn đứa con thì đã chết rồi. Thằng lính to béo đánh một cây sắt vào ngang bụng nó, lúc mẹ nó ngã xuống, không kịp che cho nó. Nhớ không Tnú, mày cũng không cứu sống được vợ mày. Còn mày thì chúng nó bắt mày, trong tay mày chỉ có hai bàn tay trắng, chúng nó trói mày lại. Còn tau thì lúc đó đứng đằng sau gốc cây vả. Tau thấy chúng nó trói mày bằng dây rừng. Tau không nhảy ra cứu mày. Tau cũng chỉ có hai bàn tay không. Tau không ra, tau quay đi vào rừng, đi tìm giáo mác. Nghe rõ chưa, các con rõ chưa. Nhớ lấy, ghi lấy. Sau này tau chết rồi, bay còn sống phải nói cho con cháu. Chúng nó đã cầm súng mình phải cầm giáo!…</p><p class=\"pcite\">(Trích Rừng Xà Nu – Nguyễn Trung Thành, Ngữ văn 12, Tập hai, NXB Giáo dục)</p>",
+            "group": 47
+          },
+          {
+            "id": 48,
+            "question": "Đoạn trích trên miêu tả con Sông Đà ở đoạn nào?",
+            "options": [
+              "Vách đá",
+              "Ghềnh Hát Loóng",
+              "Hút nước ở quãng Tà Mường Vát",
+              "Thác nước"
+            ],
+            "answer": 1,
+            "explanation": "Đoạn miêu tả nước xô đá, đá xô sóng, sóng xô gió là cảnh ghềnh Hát Loóng.",
+            "passage": "<p>“Dài hàng cây số nước xô đá, đá xô sóng, sóng xô gió, cuồn cuộn luồng gió gùn ghè suốt năm như lúc nào cũng đòi nợ xuýt bất cứ người lái đò sông Đà nào tóm được qua đấy. Quãng này mà khinh suất tay lái thì cũng dễ lật ngửa bụng thuyền ra”. (Trích Người lái đò Sông Đà – Nguyễn Tuân, Ngữ văn 12, Tập một, NXB Giáo dục)</p>",
+            "group": 48
+          },
+          {
+            "id": 49,
+            "question": "Đoạn trích trên thể hiện tâm trạng gì của tác giả?",
+            "options": [
+              "Sự băn khoăn, bế tắc và tuyệt vọng của tác giả trên con đường công danh sự nghiệp.",
+              "Chán nản, mệt mỏi trên đường đi thi",
+              "Sự chán ghét con đường thi cử",
+              "Sự phân vân lựa chọn con đường đi phù hợp"
+            ],
+            "answer": 0,
+            "explanation": "Đoạn thơ thể hiện sự băn khoăn, bế tắc, tuyệt vọng trên con đường công danh sự nghiệp.",
+            "passage": "<p>Bãi cát dài, bãi cát dài ơi!<br>Tính sao đây? Đường bằng mờ mịt,<br>Đường ghê sợ còn nhiều, đâu ít?<br>Hãy nghe ta hát khúc “đường cùng”,<br>Phía bắc núi Bắc, núi muôn trùng,<br>Phía nam núi Nam, sóng dào dạt.<br>Anh đứng làm chi trên bãi cát?</p><p class=\"pcite\">( Trích “Bài ca ngắn đi trên bãi cát”, Cao Bá Quát)</p>",
+            "group": 49
+          },
+          {
+            "id": 50,
+            "question": "Nội dung chính của đoạn trích trên là gì?",
+            "options": [
+              "Cơ sở pháp lý của bản tuyên ngôn",
+              "Cơ sở thực tiễn của bản tuyên ngôn",
+              "Lời tuyên bố độc lập",
+              "Khẳng định quyết tâm giữ vững nền độc lập của dân tộc"
+            ],
+            "answer": 2,
+            "explanation": "Đoạn trích chính là lời tuyên bố độc lập: tuyên bố thoát ly quan hệ với Pháp, xóa bỏ mọi đặc quyền của Pháp.",
+            "passage": "<p>Pháp chạy, Nhật hàng, vua Bảo Đại thoái vị. Dân ta đã đánh đổ các xiềng xích thực dân gần 100 năm nay để gây dựng nên nước Việt Nam độc lập. Dân ta lại đánh đổ chế độ quân chủ mấy mươi thế kỷ mà lập nên chế độ Dân chủ Cộng hòa.</p><p>Bởi thế cho nên, chúng tôi, lâm thời Chính phủ của nước Việt Nam mới, đại biểu cho toàn dân Việt Nam, tuyên bố thoát ly hẳn quan hệ với Pháp, xóa bỏ hết những hiệp ước mà Pháp đã ký về nước Việt Nam, xóa bỏ tất cả mọi đặc quyền của Pháp trên đất nước Việt Nam.</p><p class=\"pcite\">(Trích Tuyên ngôn Độc lập – Hồ Chí Minh, Ngữ văn 12, Tập một, NXB Giáo dục, 2007, tr.29)</p>",
+            "group": 50
+          }
+        ];
+
+        let state = {
+            questions: [],       // Processed array with shuffled options
+            userAnswers: {},     // qId -> selectedIndex
+            isSubmitted: false,  // True only after clicking NỘP BÀI
+            timerSeconds: 60 * 60,
+            timerInterval: null,
+            flagged: {}          // qId -> true (câu đánh dấu chưa làm được)
+        };
+
+        window.onload = function() {
+            initTest();
+        };
+
+        // Fisher-Yates Option Shuffling
+        // ===== Nhận diện câu trả lời ngắn =====
+        // Câu có cả 4 phương án đều là một giá trị số ngắn (số nguyên, phân số, số thập phân, ln n)
+        // sẽ tự chuyển sang dạng điền kết quả thay vì chọn A-B-C-D.
+        function parseOptionValue(tex) {
+            const t = String(tex).replace(/\$/g, '').replace(/\s+/g, '');
+            let m;
+            if ((m = t.match(/^(-?)\\d?frac\{(-?\d+)\}\{(-?\d+)\}$/))) {
+                const num = (m[1] ? -1 : 1) * Number(m[2]), den = Number(m[3]);
+                return den ? { kind: 'frac', num, den, value: num / den } : null;
+            }
+            if ((m = t.match(/^-?\d+$/))) {
+                return { kind: 'frac', num: Number(t), den: 1, value: Number(t) };
+            }
+            if ((m = t.match(/^(-?)\\ln(\d+)$/))) {
+                const sign = m[1] ? -1 : 1, arg = Number(m[2]);
+                return { kind: 'ln', sign, arg, value: sign * Math.log(arg) };
+            }
+            if ((m = t.match(/^-?\d+\.\d+$/))) {
+                const k = t.split('.')[1].length;
+                const den = Math.pow(10, k), num = Math.round(Number(t) * den);
+                return { kind: 'frac', num, den, value: Number(t) };
+            }
+            return null;
+        }
+
+        function detectShort(q) {
+            const vals = q.options.map(parseOptionValue);
+            if (vals.length < 2 || vals.some(v => !v)) return null;
+            return vals[q.answer];
+        }
+
+        function parseUserAnswer(str) {
+            let t = String(str).trim().toLowerCase()
+                .replace(/[−–—]/g, '-').replace(/,/g, '.').replace(/\s+/g, '');
+            t = t.replace(/\\?d?frac\{(-?\d+)\}\{(-?\d+)\}/, '$1/$2');
+            let m;
+            if ((m = t.match(/^(-?)\(?(-?\d+)\)?\/\(?(-?\d+)\)?$/))) {
+                const den = Number(m[3]);
+                return den ? { kind: 'frac', num: (m[1] ? -1 : 1) * Number(m[2]), den } : null;
+            }
+            if (/^-?\d+$/.test(t)) return { kind: 'frac', num: Number(t), den: 1 };
+            if ((m = t.match(/^(-?)(\d*\.\d+)$/))) {
+                return { kind: 'dec', value: Number(t), d: m[2].split('.')[1].length };
+            }
+            if ((m = t.match(/^(-?)ln\(?(\d+)\)?$/))) {
+                return { kind: 'ln', sign: m[1] ? -1 : 1, arg: Number(m[2]) };
+            }
+            return null;
+        }
+
+        function checkShort(q, input) {
+            const c = q.short, u = parseUserAnswer(input);
+            if (!c || !u) return false;
+            if (u.kind === 'dec') {
+                return u.d >= 3 && c.value.toFixed(u.d) === u.value.toFixed(u.d);
+            }
+            if (c.kind === 'frac' && u.kind === 'frac') return u.num * c.den === c.num * u.den;
+            if (c.kind === 'ln' && u.kind === 'ln') return u.arg === c.arg && u.sign === c.sign;
+            return false;
+        }
+
+        function isCorrect(q) {
+            if (!state.userAnswers.hasOwnProperty(q.id)) return false;
+            const a = state.userAnswers[q.id];
+            return q.short ? checkShort(q, a) : a === q.correctIndex;
+        }
+
+        function escAttr(v) {
+            return String(v).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+        }
+
+        function setShortAnswer(qId, val) {
+            if (state.isSubmitted) return;
+            if (String(val).trim() === '') delete state.userAnswers[qId];
+            else state.userAnswers[qId] = val;
+            updateProgress();
+            renderMatrix();
+        }
+
+        function shortAnswerHtml(q) {
+            const isAnswered = state.userAnswers.hasOwnProperty(q.id);
+            const val = isAnswered ? String(state.userAnswers[q.id]) : '';
+            let cls = 'short-input';
+            let note = '';
+            if (state.isSubmitted) {
+                const ok = isAnswered && checkShort(q, val);
+                cls += ok ? ' ok' : ' bad';
+                note = `
+                    <div class="flex flex-wrap items-center gap-2 text-sm animate-fadeIn">
+                        <span class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Đáp án đúng</span>
+                        <span class="math-content px-3 py-1.5 rounded-xl bg-emerald-950/80 border border-emerald-500 text-emerald-200 font-bold">${fmt(q.options[q.answer])}</span>
+                        ${isAnswered ? '' : '<span class="text-xs text-slate-400">(bạn chưa điền)</span>'}
+                    </div>`;
+            }
+            return `
+                <div class="pt-2 space-y-3">
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-pink-300" for="short-${q.id}">Điền kết quả của bạn</label>
+                    <input id="short-${q.id}" type="text" autocomplete="off" spellcheck="false"
+                           class="${cls}" value="${escAttr(val)}" ${state.isSubmitted ? 'disabled' : ''}
+                           placeholder="Nhập kết quả của bạn..."
+                           oninput="setShortAnswer(${q.id}, this.value)"
+                           onkeydown="if(event.key==='Enter'){this.blur();}">
+                    ${state.isSubmitted ? '' : '<p class="text-[11px] text-slate-400">Nhập số nguyên, phân số dạng a/b hoặc số thập phân (từ 3 chữ số thập phân trở lên).</p>'}
+                    ${note}
+                </div>`;
+        }
+
+        function prepareQuestions(rawBank) {
+            // Giữ nguyên thứ tự A-B-C-D như đề gốc; q.answer là chỉ số đáp án đúng
+            return rawBank.map(q => ({
+                ...q,
+                shuffledOptions: [...q.options],
+                correctIndex: q.answer,
+                short: null
+            }));
+        }
+
+        function initTest() {
+            state.userAnswers = {};
+            state.flagged = {};
+            state.isSubmitted = false;
+            document.getElementById('examTimerBox').classList.remove('hidden');
+            document.getElementById('submitExamBtn').classList.remove('hidden');
+            document.getElementById('viewResultBtn').classList.add('hidden');
+            document.getElementById('restartBtn').classList.add('hidden');
+            state.questions = prepareQuestions(RAW_QUESTION_BANK);
+            const nShort = state.questions.filter(q => q.short).length;
+            document.getElementById('heroCount').innerText = `${state.questions.length} câu trắc nghiệm`;
+
+            // Update UI status banner
+            document.getElementById('legendSelected').classList.remove('hidden');
+            document.getElementById('legendCorrect').classList.add('hidden');
+            document.getElementById('legendIncorrect').classList.add('hidden');
+
+            // Chưa chạy đồng hồ: chờ người dùng bấm "Bắt đầu làm bài"
+            clearInterval(state.timerInterval);
+            state.timerSeconds = 60 * 60;
+            updateTimerDisplay();
+            renderAll();
+            showStartScreen();
+        }
+
+        function showStartScreen() {
+            const qs = state.questions;
+            const el = document.getElementById('startScreen');
+            el.classList.remove('hidden');
+            el.scrollTop = 0;
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function beginTest() {
+            document.getElementById('startScreen').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+
+            updateMusicUI();
+
+            window.scrollTo({ top: 0 });
+            startTimer(state.timerSeconds);   // đồng hồ chỉ bắt đầu chạy từ lúc này
+        }
+
+
+        function startTimer(seconds) {
+            clearInterval(state.timerInterval);
+            state.timerSeconds = seconds;
+            updateTimerDisplay();
+
+            state.timerInterval = setInterval(() => {
+                state.timerSeconds--;
+                updateTimerDisplay();
+                if (state.timerSeconds <= 0) {
+                    clearInterval(state.timerInterval);
+                    if (!state.isSubmitted) executeSubmit();   // hết giờ: tự động nộp
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const mins = Math.floor(state.timerSeconds / 60);
+            const secs = state.timerSeconds % 60;
+            document.getElementById('timerDisplay').innerText = 
+                `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // ===== Nhạc tập trung: tạo âm thanh trực tiếp bằng Web Audio (không cần file nhạc) =====
+        const Music = {
+            ctx: null, master: null, bus: null,
+            playing: false, mode: 'beta', volume: 0.7,
+            binL: null, binR: null, padOscs: [], padIdx: 0,
+            noteTimer: null, chordTimer: null, stopTimer: null,
+            BASE: 180,
+            MODES: {
+                alpha: { hz: 10, name: 'Alpha 10 Hz', desc: 'Thư giãn, tập trung nhẹ nhàng' },
+                beta:  { hz: 18, name: 'Beta 18 Hz',  desc: 'Tỉnh táo, tập trung giải bài' },
+                gamma: { hz: 40, name: 'Gamma 40 Hz', desc: 'Tư duy, ghi nhớ' }
+            },
+            CHORDS: [
+                [110.00, 164.81, 220.00, 261.63],   // Am
+                [87.31, 130.81, 174.61, 220.00],    // F
+                [130.81, 196.00, 261.63, 329.63],   // C
+                [98.00, 146.83, 196.00, 246.94]     // G
+            ],
+            SCALE: [220.00, 261.63, 293.66, 329.63, 392.00, 440.00, 523.25],
+
+            level() { return Math.pow(this.volume, 1.4); },
+
+            init() {
+                if (this.ctx) return true;
+                const AC = window.AudioContext || window.webkitAudioContext;
+                if (!AC) return false;
+                const c = this.ctx = new AC();
+
+                this.master = c.createGain();
+                this.master.gain.value = 0;
+                const comp = c.createDynamicsCompressor();
+                this.master.connect(comp);
+                comp.connect(c.destination);
+
+                // Bus nhạc nền: lọc mềm + vọng nhẹ
+                this.bus = c.createGain();
+                this.bus.gain.value = 1.0;
+                const lp = c.createBiquadFilter();
+                lp.type = 'lowpass';
+                lp.frequency.value = 1700;
+                const delay = c.createDelay(1.5);
+                delay.delayTime.value = 0.46;
+                const fb = c.createGain();
+                fb.gain.value = 0.36;
+                this.bus.connect(lp);
+                lp.connect(this.master);
+                lp.connect(delay);
+                delay.connect(fb);
+                fb.connect(delay);
+                delay.connect(this.master);
+
+                // Binaural: tai trái và phải lệch nhau đúng bằng tần số nhịp
+                const hz = this.MODES[this.mode].hz;
+                const binGain = c.createGain();
+                binGain.gain.value = 0.3;
+                binGain.connect(this.master);
+                const mk = (freq, pan) => {
+                    const o = c.createOscillator();
+                    o.type = 'sine';
+                    o.frequency.value = freq;
+                    const g = c.createGain();
+                    g.gain.value = 1;
+                    o.connect(g);
+                    if (c.createStereoPanner) {
+                        const p = c.createStereoPanner();
+                        p.pan.value = pan;
+                        g.connect(p);
+                        p.connect(binGain);
+                    } else {
+                        g.connect(binGain);
+                    }
+                    o.start();
+                    return o;
+                };
+                this.binL = mk(this.BASE, -1);
+                this.binR = mk(this.BASE + hz, 1);
+
+                // Pad hợp âm êm, âm lượng thay đổi chậm
+                this.CHORDS[0].forEach((f, i) => {
+                    const o = c.createOscillator();
+                    o.type = i % 2 ? 'triangle' : 'sine';
+                    o.frequency.value = f;
+                    o.detune.value = (Math.random() - 0.5) * 8;
+                    const g = c.createGain();
+                    g.gain.value = 0.085;
+                    const lfo = c.createOscillator();
+                    lfo.frequency.value = 0.04 + Math.random() * 0.08;
+                    const depth = c.createGain();
+                    depth.gain.value = 0.045;
+                    lfo.connect(depth);
+                    depth.connect(g.gain);
+                    o.connect(g);
+                    g.connect(this.bus);
+                    o.start();
+                    lfo.start();
+                    this.padOscs.push(o);
+                });
+                return true;
+            },
+
+            playNote() {
+                if (!this.playing) return;
+                const c = this.ctx, now = c.currentTime;
+                if (Math.random() > 0.3) {
+                    const f = this.SCALE[Math.floor(Math.random() * this.SCALE.length)];
+                    const o = c.createOscillator();
+                    o.type = Math.random() > 0.5 ? 'sine' : 'triangle';
+                    o.frequency.value = f;
+                    const g = c.createGain();
+                    g.gain.setValueAtTime(0.0001, now);
+                    g.gain.exponentialRampToValueAtTime(0.14, now + 0.05);
+                    g.gain.exponentialRampToValueAtTime(0.0001, now + 3.2);
+                    o.connect(g);
+                    g.connect(this.bus);
+                    o.start(now);
+                    o.stop(now + 3.4);
+                }
+                this.noteTimer = setTimeout(() => this.playNote(), 1800 + Math.random() * 1900);
+            },
+
+            nextChord() {
+                if (!this.playing) return;
+                this.padIdx = (this.padIdx + 1) % this.CHORDS.length;
+                const now = this.ctx.currentTime;
+                this.CHORDS[this.padIdx].forEach((f, i) => this.padOscs[i].frequency.setTargetAtTime(f, now, 1.5));
+                this.chordTimer = setTimeout(() => this.nextChord(), 12000);
+            },
+
+            start() {
+                if (!this.init()) return false;
+                clearTimeout(this.stopTimer);
+                if (this.ctx.state === 'suspended') this.ctx.resume();
+                this.playing = true;
+                const now = this.ctx.currentTime;
+                this.master.gain.cancelScheduledValues(now);
+                this.master.gain.setTargetAtTime(this.level(), now, 0.8);
+                clearTimeout(this.noteTimer);
+                clearTimeout(this.chordTimer);
+                this.playNote();
+                this.chordTimer = setTimeout(() => this.nextChord(), 12000);
+                return true;
+            },
+
+            stop() {
+                if (!this.ctx) return;
+                this.playing = false;
+                clearTimeout(this.noteTimer);
+                clearTimeout(this.chordTimer);
+                const now = this.ctx.currentTime;
+                this.master.gain.cancelScheduledValues(now);
+                this.master.gain.setTargetAtTime(0, now, 0.25);
+                this.stopTimer = setTimeout(() => {
+                    if (!this.playing && this.ctx.state === 'running') this.ctx.suspend();
+                }, 1500);
+            },
+
+            setMode(m) {
+                if (!this.MODES[m]) return;
+                this.mode = m;
+                if (this.binR) this.binR.frequency.setTargetAtTime(this.BASE + this.MODES[m].hz, this.ctx.currentTime, 0.4);
+            },
+
+            setVolume(v) {
+                this.volume = Math.min(1, Math.max(0, v));
+                if (this.master && this.playing) this.master.gain.setTargetAtTime(this.level(), this.ctx.currentTime, 0.15);
+            }
+        };
+
+        function updateMusicUI() {
+            document.getElementById('musicBtn').classList.toggle('playing', Music.playing);
+            document.getElementById('musicToggleLabel').innerText = Music.playing ? 'Tạm dừng nhạc' : 'Bật nhạc';
+            document.getElementById('musicStatus').innerText = Music.playing ? 'Đang phát' : 'Đang tắt';
+            Object.keys(Music.MODES).forEach(k => {
+                document.getElementById('mode-' + k).classList.toggle('active', Music.mode === k);
+            });
+            document.getElementById('modeDesc').innerText = Music.MODES[Music.mode].desc;
+        }
+
+        function toggleMusicPanel() {
+            document.getElementById('musicPanel').classList.toggle('hidden');
+            updateMusicUI();
+        }
+
+        function toggleMusic() {
+            if (Music.playing) {
+                Music.stop();
+            } else if (!Music.start()) {
+                alert('Trình duyệt của bạn không hỗ trợ phát âm thanh Web Audio.');
+            }
+            updateMusicUI();
+        }
+
+        function setMusicMode(m) {
+            Music.setMode(m);
+            updateMusicUI();
+        }
+
+        function setMusicVolume(v) {
+            Music.setVolume(Number(v) / 100);
+        }
+
+        document.addEventListener('click', (e) => {
+            const wrap = document.getElementById('musicWrap');
+            const panel = document.getElementById('musicPanel');
+            if (wrap && panel && !wrap.contains(e.target)) panel.classList.add('hidden');
+        });
+
+        function restartTest() {
+            closeResultModal();
+            initTest();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function passageHtml(q) {
+            if (!q.passage) return '';
+            const isFirst = !q.range || q.id === q.range[0];
+            const label = q.range ? `Đoạn trích dùng cho câu ${q.range[0]}–${q.range[1]}` : 'Đoạn trích / ngữ liệu';
+            if (isFirst) return `<div class="passage-box"><div class="passage-label">${label}</div>${q.passage}</div>`;
+            return `<details class="passage-box passage-fold"><summary>${label} (bấm để xem lại)</summary>${q.passage}</details>`;
+        }
+
+        function fmt(t) {
+            return String(t).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+        }
+
+        function renderMath(el) {
+            if (window.renderMathInElement) {
+                renderMathInElement(el || document.body, {
+                    delimiters: [
+                        {left: "$$", right: "$$", display: true},
+                        {left: "$", right: "$", display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+        }
+
+        function triggerKaTeX() {
+            renderMath(document.body);
+        }
+
+        function refreshCard(qId) {
+            const filtered = getFilteredQuestions();
+            const idx = filtered.findIndex(x => x.id === qId);
+            const oldCard = document.getElementById(`question-card-${qId}`);
+            if (idx >= 0 && oldCard && window.buildQuestionCard) {
+                const newCard = window.buildQuestionCard(filtered[idx], idx);
+                oldCard.replaceWith(newCard);
+                renderMath(newCard);
+            } else {
+                renderQuestions();
+                renderMath(document.body);
+            }
+        }
+
+        function selectOption(qId, optionIdx) {
+            if (state.isSubmitted) return; // Frozen after submitting
+
+            state.userAnswers[qId] = optionIdx;
+
+            updateProgress();
+            renderMatrix();
+            refreshCard(qId);
+        }
+
+        function toggleFlag(qId) {
+            if (state.isSubmitted) return;
+            if (state.flagged[qId]) delete state.flagged[qId];
+            else state.flagged[qId] = true;
+
+            updateProgress();
+            renderMatrix();
+            refreshCard(qId);
+        }
+
+        function jumpToNextFlag() {
+            const ids = state.questions.filter(q => state.flagged[q.id]).map(q => q.id);
+            if (ids.length === 0) return;
+            let target = null;
+            for (const id of ids) {
+                const el = document.getElementById(`question-card-${id}`);
+                if (el && el.getBoundingClientRect().top > 140) { target = el; break; }
+            }
+            if (!target) target = document.getElementById(`question-card-${ids[0]}`);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function getFilteredQuestions() {
+            return state.questions;
+        }
+
+        function updateProgress() {
+            const total = state.questions.length;
+            const answered = Object.keys(state.userAnswers).length;
+            const percent = total > 0 ? Math.round((answered / total) * 100) : 0;
+
+            document.getElementById('progressText').innerText = `${answered} / ${total} Đã làm`;
+            document.getElementById('progressBar').style.width = `${percent}%`;
+
+            const flagN = Object.keys(state.flagged).length;
+            document.getElementById('flagCount').innerText = flagN;
+            document.getElementById('flagRow').classList.toggle('hidden', state.isSubmitted);
+            document.getElementById('legendFlag').classList.toggle('hidden', state.isSubmitted);
+            const jb = document.getElementById('flagJumpBtn');
+            jb.disabled = flagN === 0;
+            jb.classList.toggle('opacity-40', flagN === 0);
+        }
+
+        function renderMatrix() {
+            const container = document.getElementById('questionMatrix');
+            container.innerHTML = '';
+
+            const filtered = getFilteredQuestions();
+            document.getElementById('visibleCount').innerText = filtered.length;
+
+            filtered.forEach((q, idx) => {
+                const isAnswered = state.userAnswers.hasOwnProperty(q.id);
+                const selectedIdx = state.userAnswers[q.id];
+
+                let btnClass = "bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700";
+
+                if (isAnswered) {
+                    if (!state.isSubmitted) {
+                        // BEFORE SUBMIT: Pure Indigo selection status
+                        btnClass = "bg-indigo-600 text-white border-indigo-500 font-bold shadow-md shadow-indigo-900/30";
+                    } else {
+                        // AFTER SUBMIT: Show Green (Correct) / Red (Wrong)
+                        if (isCorrect(q)) {
+                            btnClass = "bg-emerald-600 text-white border-emerald-500 font-bold shadow-md shadow-emerald-900/30";
+                        } else {
+                            btnClass = "bg-rose-600 text-white border-rose-500 font-bold shadow-md shadow-rose-900/30";
+                        }
+                    }
+                }
+
+                if (!state.isSubmitted && state.flagged[q.id]) {
+                    btnClass = isAnswered ? btnClass + ' m-flag' : "bg-pink-500/20 text-pink-300 border-pink-400 font-bold m-flag";
+                }
+
+                const btn = document.createElement('button');
+                btn.className = `w-full h-9 text-xs rounded-xl font-medium border flex items-center justify-center transition-all duration-150 ${btnClass}`;
+                btn.innerText = idx + 1;
+                btn.onclick = () => {
+                    const el = document.getElementById(`question-card-${q.id}`);
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                };
+
+                container.appendChild(btn);
+            });
+        }
+
+        function renderQuestions() {
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+
+            const filtered = getFilteredQuestions();
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="glass-card p-12 text-center rounded-3xl space-y-3">
+                        <svg class="ic text-4xl text-slate-600" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>
+                        <p class="text-slate-400 text-sm">Không tìm thấy câu hỏi nào phù hợp với bộ lọc!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const buildCard = (q, displayIdx) => {
+                const isAnswered = state.userAnswers.hasOwnProperty(q.id);
+                const selectedOptionIdx = state.userAnswers[q.id];
+
+                const card = document.createElement('div');
+                card.id = `question-card-${q.id}`;
+                card.className = 'glass-card p-5 sm:p-7 rounded-3xl space-y-5 transition duration-200 border border-slate-800 hover:border-slate-700';
+
+
+                const labels = ['A', 'B', 'C', 'D'];
+
+                const isFlagged = !!state.flagged[q.id];
+                if (isFlagged && !state.isSubmitted) card.classList.add('is-flagged');
+                const flagBtn = state.isSubmitted ? '' : `
+                    <button onclick="toggleFlag(${q.id})" class="flag-btn ${isFlagged ? 'on' : ''}" title="Đánh dấu câu chưa làm được để quay lại sau">
+                        <svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+                        <span>${isFlagged ? 'Đã đánh dấu' : 'Đánh dấu chưa làm được'}</span>
+                    </button>`;
+
+                // Options HTML
+                let optionsHtml = '';
+                if (q.short) {
+                    optionsHtml = shortAnswerHtml(q);
+                } else {
+                optionsHtml = '<div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">';
+
+                q.shuffledOptions.forEach((optText, optIdx) => {
+                    let optStyle = "bg-slate-900/60 hover:bg-slate-800/80 border-slate-800 text-slate-300";
+                    let badgeStyle = "bg-slate-800 text-slate-400";
+                    let feedbackIcon = "";
+
+                    if (isAnswered && selectedOptionIdx === optIdx) {
+                        if (!state.isSubmitted) {
+                            // BEFORE SUBMIT: ONLY active selected Indigo styling!
+                            optStyle = "bg-indigo-950/80 border-indigo-500 text-indigo-200 font-medium shadow-md shadow-indigo-950/40 ring-1 ring-indigo-500";
+                            badgeStyle = "bg-indigo-600 text-white font-bold";
+                        }
+                    }
+
+                    if (state.isSubmitted) {
+                        // AFTER SUBMIT: Reveal Correct (Green) / Incorrect (Red)
+                        if (optIdx === q.correctIndex) {
+                            optStyle = "bg-emerald-950/80 border-emerald-500 text-emerald-200 font-medium shadow-md shadow-emerald-950/40 ring-1 ring-emerald-500";
+                            badgeStyle = "bg-emerald-600 text-white font-bold";
+                            feedbackIcon = '<svg class="ic text-emerald-400 text-lg ml-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>';
+                        } else if (isAnswered && selectedOptionIdx === optIdx) {
+                            optStyle = "bg-rose-950/80 border-rose-500 text-rose-200 font-medium shadow-md shadow-rose-950/40 ring-1 ring-rose-500";
+                            badgeStyle = "bg-rose-600 text-white font-bold";
+                            feedbackIcon = '<svg class="ic text-rose-400 text-lg ml-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>';
+                        }
+                    }
+
+                    optionsHtml += `
+                        <button onclick="selectOption(${q.id}, ${optIdx})" 
+                                class="opt-btn w-full text-left p-3.5 rounded-2xl border flex items-center space-x-3 transition duration-150 group ${optStyle}">
+                            <span class="w-7 h-7 rounded-xl flex items-center justify-center text-xs font-bold transition ${badgeStyle}">
+                                ${labels[optIdx]}
+                            </span>
+                            <span class="text-sm sm:text-[15px] flex-1 math-content leading-relaxed">${fmt(optText)}</span>
+                            ${feedbackIcon}
+                        </button>
+                    `;
+                });
+                optionsHtml += '</div>';
+                }
+
+                // Solution Box - ONLY AFTER SUBMIT!
+                let solutionHtml = '';
+                if (state.isSubmitted) {
+                    solutionHtml = `
+                        <div class="mt-4 p-4 rounded-2xl bg-slate-900/90 border border-indigo-500/30 space-y-2 animate-fadeIn">
+                            <div class="flex items-center space-x-2 text-indigo-400 text-xs font-bold uppercase tracking-wider">
+                                <svg class="ic text-amber-400" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                                <span>LỜI GIẢI CHI TIẾT TỪNG BƯỚC:</span>
+                            </div>
+                            <div class="text-sm text-slate-200 math-content leading-relaxed whitespace-pre-line pl-1">
+                                ${fmt(q.explanation)}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="px-3 py-1 bg-indigo-600 text-white font-extrabold text-xs rounded-xl shadow-sm">
+                                CÂU ${displayIdx + 1}
+                            </span>
+                            ${q.short ? '<span class="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-pink-500/15 text-pink-300 border border-pink-400/30">TRẢ LỜI NGẮN</span>' : ''}
+                        </div>
+                        ${flagBtn}
+                    </div>
+
+                    ${passageHtml(q)}
+                    <!-- Question stem -->
+                    <div class="text-sm sm:text-base text-slate-100 font-medium leading-relaxed math-content pt-1">
+                        ${fmt(q.question)}
+                    </div>
+
+                    <!-- Options list -->
+                    ${optionsHtml}
+
+                    <!-- Solution Box -->
+                    ${solutionHtml}
+                `;
+
+                return card;
+            };
+
+            window.buildQuestionCard = buildCard;
+            filtered.forEach((q, i) => container.appendChild(buildCard(q, i)));
+        }
+
+        function renderAll() {
+            updateProgress();
+            renderMatrix();
+            renderQuestions();
+            triggerKaTeX();
+        }
+
+        // Submit Exam Handler
+        function submitExam() {
+            if (state.isSubmitted) return;
+
+            const answeredCount = Object.keys(state.userAnswers).length;
+            const totalCount = state.questions.length;
+
+            const flaggedCount = Object.keys(state.flagged).length;
+
+            if (answeredCount < totalCount || flaggedCount > 0) {
+                let msg = `Bạn mới làm ${answeredCount}/${totalCount} câu.`;
+                if (flaggedCount > 0) msg += ` Còn ${flaggedCount} câu đang đánh dấu chưa làm được.`;
+                msg += ' Bạn có chắc chắn muốn Nộp Bài ngay?';
+                showConfirm("Xác nhận Nộp Bài", msg, () => executeSubmit());
+            } else {
+                executeSubmit();
+            }
+        }
+
+        function executeSubmit() {
+            state.isSubmitted = true;
+            clearInterval(state.timerInterval);
+
+            // Ẩn đồng hồ và nút NỘP BÀI, thay bằng nút xem kết quả
+            document.getElementById('examTimerBox').classList.add('hidden');
+            document.getElementById('submitExamBtn').classList.add('hidden');
+            document.getElementById('viewResultBtn').classList.remove('hidden');
+            document.getElementById('restartBtn').classList.remove('hidden');
+
+            // Update UI status banner
+            document.getElementById('legendSelected').classList.add('hidden');
+            document.getElementById('legendCorrect').classList.remove('hidden');
+            document.getElementById('legendIncorrect').classList.remove('hidden');
+
+            let correctCount = 0;
+            let incorrectCount = 0;
+            let skippedCount = 0;
+
+            state.questions.forEach(q => {
+                if (state.userAnswers.hasOwnProperty(q.id)) {
+                    if (isCorrect(q)) {
+                        correctCount++;
+                    } else {
+                        incorrectCount++;
+                    }
+                } else {
+                    skippedCount++;
+                }
+            });
+
+            const score = ((correctCount / state.questions.length) * 10).toFixed(1);
+
+            // Update Result Modal
+            document.getElementById('finalScore').innerText = score;
+            document.getElementById('headerScore').innerText = score;
+            document.getElementById('modalCorrect').innerText = correctCount;
+            document.getElementById('modalIncorrect').innerText = incorrectCount;
+            document.getElementById('modalSkipped').innerText = skippedCount;
+
+            const spentSeconds = (60 * 60) - state.timerSeconds;
+            const spentMins = Math.floor(spentSeconds / 60);
+            const spentSecs = spentSeconds % 60;
+            document.getElementById('timeSpentText').innerText = `${spentMins} phút ${spentSecs} giây`;
+
+            const scoreGrade = document.getElementById('scoreGrade');
+            if (score >= 8.5) {
+                scoreGrade.innerText = "Xuất sắc! Bạn đã làm chủ hoàn toàn kiến thức Ngữ văn ĐGNL - Đề số 5.";
+                scoreGrade.className = "text-xs font-semibold text-emerald-400 pt-1";
+            } else if (score >= 6.5) {
+                scoreGrade.innerText = "Khá tốt! Hãy rà soát các câu sai ở phần Lời giải chi tiết bên dưới.";
+                scoreGrade.className = "text-xs font-semibold text-teal-400 pt-1";
+            } else {
+                scoreGrade.innerText = "Cần cố gắng thêm! Xem kỹ phần Lời giải từng bước để củng cố lại kiến thức.";
+                scoreGrade.className = "text-xs font-semibold text-amber-400 pt-1";
+            }
+
+            if (score >= 7.0 && window.confetti) {
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            }
+
+            openResultModal();
+            renderAll();
+            scrollToFirstQuestion();   // nộp bài xong quay về câu 1 để đối chiếu
+        }
+
+        function scrollToFirstQuestion() {
+            const go = () => window.scrollTo({ top: 0, behavior: 'auto' });
+            go();
+            requestAnimationFrame(go);   // chạy lại sau khi danh sách câu hỏi vẽ xong
+        }
+
+        // Modal Controls
+        function openResultModal() {
+            const modal = document.getElementById('resultModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.children[0].classList.remove('scale-95');
+            modal.children[0].classList.add('scale-100');
+        }
+
+        function closeResultModal() {
+            const modal = document.getElementById('resultModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.children[0].classList.remove('scale-100');
+            modal.children[0].classList.add('scale-95');
+            scrollToFirstQuestion();   // đóng bảng kết quả cũng về câu 1
+        }
+
+        function showConfirm(title, desc, onOk) {
+            document.getElementById('confirmTitle').innerText = title;
+            document.getElementById('confirmDesc').innerText = desc;
+            
+            const modal = document.getElementById('confirmModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+
+            const okBtn = document.getElementById('confirmOkBtn');
+            const cancelBtn = document.getElementById('confirmCancelBtn');
+
+            const closeConfirm = () => {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+            };
+
+            okBtn.onclick = () => {
+                closeConfirm();
+                if (onOk) onOk();
+            };
+
+            cancelBtn.onclick = () => {
+                closeConfirm();
+            };
+        }
+
+        // ===== Thẻ trích dẫn =====
+        const QUOTES = [
+            { t: "Văn ôn võ luyện.", a: "Tục ngữ" },
+            { t: "Có công mài sắt, có ngày nên kim.", a: "Tục ngữ" },
+            { t: "Đi một ngày đàng, học một sàng khôn.", a: "Tục ngữ" },
+            { t: "Không có việc gì khó, chỉ sợ lòng không bền. Đào núi và lấp biển, quyết chí ắt làm nên.", a: "Hồ Chí Minh" },
+            { t: "Nay ở trong thơ nên có thép, nhà thơ cũng phải biết xung phong.", a: "Hồ Chí Minh" },
+            { t: "Việc nhân nghĩa cốt ở yên dân.", a: "Nguyễn Trãi" }
+        ];
+        let quoteIdx = Math.floor(Math.random() * QUOTES.length);
+        function renderQuote() {
+            const q = QUOTES[quoteIdx];
+            const card = document.getElementById('quoteCard');
+            if (!card) return;
+            card.classList.remove('swap'); void card.offsetWidth; card.classList.add('swap');
+            document.getElementById('quoteText').innerText = q.t;
+            document.getElementById('quoteAuthor').innerText = q.a;
+        }
+        function nextQuote() { quoteIdx = (quoteIdx + 1) % QUOTES.length; renderQuote(); }
+        renderQuote();
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
